@@ -18,15 +18,16 @@
         <!--Dummy navigation - To simulate Sales Force Navigation-->
 
         <!--Navigation starts-->
-        
+
         <data-ng-include src="'local/navigation.templates.html'"></data-ng-include>
-                
+
         <!--End of navigation-->
 
         <!--Start of the main wrapper - goes into Sales Force-->
 
         <div class="scm-main-wrapper">
 
+         <form class="form-inline">   
             <div class="container-fluid">
 
                 <div class="row">
@@ -35,9 +36,38 @@
 
                         <div class="hm-wrapper">
 
+                           <div class="hm-link pull-right">
+                                <a href="#"> Click here for user manual </a>
+                            </div> 
+
                             <div class="hm-inner">
+                            
+                            <div class="hm-header">
+                                    
+                                        <label>Please select a Unit: </label>
+                                    
+                                    <select title="YearList" onchange="A4J.AJAX.Submit('j_id0:j_id2',event,{'similarityGroupingId':'j_id0:j_id2:j_id5','parameters':{'j_id0:j_id2:j_id5':'j_id0:j_id2:j_id5'} } )"
+                                    size="1" class="form-control" name="j_id0:j_id2:lstSegments" id="j_id0:j_id2:lstSegments">	<option selected="selected" value="00Gf0000000kxpmEAA">UK-CHOCOLATE</option>
+                                    <option value="00Gf0000000kxprEAA">UK-PET</option>
+                                    </select>
+                                        
+                                    </div>     
 
                                 <div class="hm-body">
+               
+            <span id="j_id0:j_id2:ButtonLinks">
+		
+		    <a href="/apex/SCMChannelReport?pg=00Gf0000000kxpmEAA">Channel Forecasting</a>
+		
+		    <a href="/apex/SCMCustomerPrioritisation?pg=00Gf0000000kxpmEAA">
+			    Customer<br> Prioritisation
+		    </a>
+		
+		    <a href="/apex/SCM_Bold_Resource_Choices?pg=00Gf0000000kxpmEAA">Bold Resource Choices</a></span>
+
+                                </div>
+
+                                <!--<div class="hm-body">
 
                                     <a href="forecasts.html">Channel Forecasting</a>
 
@@ -48,7 +78,7 @@
                                     <a href="bold-resource-choices.html">Bold Resource Choices</a>
 
 
-                                </div>
+                                </div>-->
 
                             </div>
 
@@ -58,14 +88,16 @@
 
                 </div>
             </div>
+            
+            </form>
 
         </div>
 
     </div>
-    
+
     <!--inject:vendors-->
     <script src="scripts/angular.v1.5.3.min.js"></script>
-    
+
     <script src="local/app-dummy.module.js"></script>
 
 </body>

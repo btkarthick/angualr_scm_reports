@@ -11,7 +11,7 @@
 
     'use strict';
 
-    var setResourcesController = function (resourceserv) {
+    var setResourcesController = function (resourceserv, ngForceConfig) {
 
         var vm = this;
 
@@ -21,6 +21,8 @@
         vm.partnerDummyRows = [];
         vm.nicheDummyRows = [];
         vm.scaleDummyRows = [];
+        
+        vm.selectedGroupID = ngForceConfig.selectedGroupID;
 
 
         // Private related functions starts //
@@ -82,5 +84,5 @@
         .module('scm.bold.resource')
         .controller('ResCtrl', setResourcesController);
 
-    setResourcesController.$inject = ['resourceserv'];
+    setResourcesController.$inject = ['resourceserv', 'ngForceConfig'];
 })();

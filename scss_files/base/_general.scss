@@ -107,6 +107,8 @@ a{
            // width: 10px;      
             
         }
+        
+     
         .sep-column{
             border-right: 1px solid #3AB3E4;
         }
@@ -143,7 +145,26 @@ a{
             height: 32px;
             text-indent: -9999px;
             cursor:pointer;
-      } 
+      }
+    
+    &-top{
+         
+         &-ctrls{
+             
+                width: 100%;
+                @include clearfix();
+                
+                .segmentText{
+                    
+                    color: #1b8aba;
+                    float: right;
+                    font-size: 18px;
+                    padding-top: 5px;
+                    padding-right: 15px;
+                    
+                }
+         }
+     }      
 }
 
 .chart-canvas{
@@ -152,5 +173,5 @@ a{
 
 .dl-anchor{
     @extend .chart-canvas;
-    text-indent: 9999;
+    text-indent: -9999px;
 }

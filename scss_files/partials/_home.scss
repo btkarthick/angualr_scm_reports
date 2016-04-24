@@ -9,14 +9,32 @@
     &-wrapper{
         
         width: 100%;
-        padding-top: 50px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+       
         
+       }
+       
+       &-link{
+           
+           margin-right: 25px;
+           
+           a{
+                color: #1b8aba;
+                font-size: 14px;
+                &:hover{
+                    
+                    color: #1b8aba;
+                    text-decoration: underline;
+                }
+           }
        }
        
        &-inner{
            
            width: 750px;
            margin: 0 auto;
+           margin-top: 50px;
            border: 1px solid #dddddd;
            border-radius: 4px;
            
@@ -24,35 +42,34 @@
        
        &-header{
            
-                background-color: #f8f8f8;
-                border-color: #e7e7e7;
-                padding-bottom: 18px;
+                background-color: #0295C3;
+                border-color: #0295C3;
+                padding-bottom: 13px;
                 padding-left: 15px;
-                padding-top: 15px;
-                color: #333333;
-                
-                
-                .form-group{
+                padding-top: 13px;
+                color: #FFFFFF;
+                SELECT{
                     
-                    label{
-                        
-                        font-weight: normal;
-                        font-size: 14px;
-                     }
-                    
-                    SELECT{
-                    
-                    width: 180px;
-                }
+                    margin-left: 5px;
                     
                 }
-                
-       }
+          }
        
        &-body{
            
-           padding: 70px 45px;
+           padding-top: 10px;
+           padding-right: 45px;
+           padding-left: 45px;
+           padding-bottom: 30px;
+           
            @include clearfix();
+           
+           
+           span{
+               
+               display: block;
+               padding-top: 35px;
+           }
            
            a{
 
