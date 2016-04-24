@@ -1,0 +1,172 @@
+<button type="button" class="close" aria-label="Close" data-ng-click="editcat.dismissModal()">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+<div class="modal-header">
+
+    <h3 class="modal-title">
+         <span  data-ng-bind="editcat.modalData.channelName | capitalizeIt"></span>
+         <span data-ng-if="editcat.modalData.hasFormat">
+             - {{editcat.modalData.formatName | capitalizeIt }}
+         </span>
+    </h3>
+</div>
+
+<div class="modal-body">
+    <form name="editCategoryForm">
+        <div class="row edit-form-wrapper">
+            <div class="form-group col-xs-4">
+
+                <h5 class="text-center">Overall Category Sales by Channel (RSV)</h5>
+                <label for="">2015A ($M)</label>
+                <input type="text" class="form-control" name="SalesActuals" data-ng-model="editcat.format.Category_Total_Sales_Actuals__c"
+                data-ng-change="editcat.validate(editcat.format.Category_Total_Sales_Actuals__c,'SalesActuals')"
+                data-ng-required="true" data-ng-blur="editcat.calOverAllCAGR1520();">
+                
+                <div ng-messages="editCategoryForm.SalesActuals.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+                
+                <div ng-messages="editCategoryForm.$error" class="error" role="alert">
+                    <div ng-message="SalesActuals">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020F ($M)</label>
+                <input type="text" class="form-control" name="SalesForecast" data-ng-model="editcat.format.Category_Total_Sales_Forecast__c"
+                data-ng-change="editcat.validate(editcat.format.Category_Total_Sales_Forecast__c,'SalesForecast')"
+                data-ng-required="true" 
+                id="" 
+                data-ng-blur="editcat.calOverAllTotal();">
+                
+                <div ng-messages="editCategoryForm.SalesForecast.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+                
+                <div ng-messages="editCategoryForm.$error" class="error" role="alert">
+                    <div ng-message="SalesForecast">Please enter a valid number</div>
+                </div>
+                
+                <label for="">CAGR (12-15) (%)</label>
+                <input type="text" class="form-control" name="Sales_3Y" 
+                data-ng-model="editcat.format.Category_Total_Sales_CAGR_3Y__c" 
+                data-ng-change="editcat.validate(editcat.format.Category_Total_Sales_CAGR_3Y__c,'Sales_3Y')"
+                data-ng-required="true"
+                id="">
+                
+                <div ng-messages="editCategoryForm.Sales_3Y.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+                
+                <div ng-messages="editCategoryForm.$error" class="error" role="alert">
+                    <div ng-message="Sales_3Y">Please enter a valid number</div>
+                </div>
+                
+                <label for="">CAGR (15-20) (%)</label>
+                <input  type="text" 
+                        class="form-control" 
+                        data-ng-model="editcat.format.Category_Total_Sales_CAGR_5Y__c" 
+                        id="" 
+                        data-ng-readonly="true">
+
+
+                <label for="">2020 % of total</label>
+                <input  type="text" 
+                        class="form-control" 
+                        data-ng-model="editcat.format.Category_Total_Sales_Total__c" 
+                        id="" 
+                        data-ng-readonly="true">
+
+            </div>
+
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Mars Category Sales by Channel (RSV)</h5>
+
+                <label for="">2015A ($M)</label>
+                <input type="text" class="form-control" name="CategoryActual" id="" data-ng-model="editcat.format.Mars_Category_Total_Sales_Actuals__c"
+                data-ng-change="editcat.validate(editcat.format.Mars_Category_Total_Sales_Actuals__c,'CategoryActual')"
+                data-ng-required="true" data-ng-blur="editcat.calMarsCAGR1520();">
+
+                <div ng-messages="editCategoryForm.CategoryActual.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+                
+                <div ng-messages="editCategoryForm.$error" class="error" role="alert">
+                    <div ng-message="CategoryActual">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020F ($M)</label>
+                <input type="text" class="form-control" name="CategoryForecast" id="" data-ng-model="editcat.format.Mars_Category_Total_Sales_Forecast__c"
+                data-ng-change="editcat.validate(editcat.format.Mars_Category_Total_Sales_Forecast__c,'CategoryForecast')"
+                data-ng-required="true" 
+                data-ng-blur="editcat.calMarsOverAllTotal();">
+
+                <div ng-messages="editCategoryForm.CategoryForecast.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+                
+                <div ng-messages="editCategoryForm.$error" class="error" role="alert">
+                    <div ng-message="CategoryForecast">Please enter a valid number</div>
+                </div>
+
+                <label for="">CAGR (12-15) (%)</label>
+                <input type="text" class="form-control" name="Category_3Y" id="" data-ng-model="editcat.format.Mars_Category_Total_Sales_CAGR_3Y__c"
+                data-ng-change="editcat.validate(editcat.format.Mars_Category_Total_Sales_CAGR_3Y__c,'Category_3Y')"
+                data-ng-required="true">
+
+                <div ng-messages="editCategoryForm.Category_3Y.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+                
+                <div ng-messages="editCategoryForm.$error" class="error" role="alert">
+                    <div ng-message="Category_3Y">Please enter a valid number</div>
+                </div>
+
+                <label for="">CAGR (15-20) (%)</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="" 
+                        data-ng-model="editcat.format.Mars_Category_Total_Sales_CAGR_5Y__c" 
+                        data-ng-readonly="true">
+
+                <label for="">2020 % of total</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="" 
+                        data-ng-model="editcat.format.Mars_Category_Total_Sales_Total__c" 
+                        data-ng-readonly="true">
+
+            </div>
+
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Mars Category Share</h5>
+
+                <label for="">2015A (%)</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="" 
+                        data-ng-model="editcat.format.Mars_Category_Share_Actuals__c" 
+                        data-ng-readonly="true">
+
+                <label for="">2020F (%)</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="" 
+                        data-ng-model="editcat.format.Mars_Category_Share_Forecast__c" 
+                        data-ng-readonly="true">
+
+                <label for="">PP change (15-20)</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="" 
+                        data-ng-model="editcat.format.Mars_Category_Share_PP_Change__c" 
+                        data-ng-readonly="true">
+            </div>
+
+        </div>
+        
+        <div class="edit-button-wrapper center-block">
+            <a class="scmBtn btn-warning" data-ng-click="editcat.resetForm()">Reset</a>
+             <a class="scmBtn btn-primary" data-ng-click="editcat.updateChannel()">Save</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,89 @@
+<button type="button" class="close" aria-label="Close" data-ng-click="editchanl.dismissModal()">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+<div class="modal-header">
+
+    <h3 class="modal-title">
+         
+         <span  data-ng-bind="editchanl.modalData.channelName | capitalizeIt"></span>
+         <span data-ng-if="editchanl.modalData.hasFormat">
+             - {{editchanl.modalData.formatName | capitalizeIt }}
+         </span>
+    </h3>
+</div>
+
+<div class="modal-body">
+    <form name="editShareForm" class="edit-channel-wrapper">
+        <div class="row edit-form-wrapper">
+            <div class="form-group col-xs-12 center-block">
+
+                <h5 class="text-center">Mars Resources by Channel</h5>
+                <label for="">Total spend 2015A ($M)</label>
+                <input type="text" 
+                class="form-control" 
+                name="Total_Spend" 
+                data-ng-change="editchanl.validate(editchanl.format.Mars_Channel_Total_Spent__c,'Total_Spend')"
+                data-ng-model="editchanl.format.Mars_Channel_Total_Spent__c" />
+                
+                <div ng-messages="editShareForm.$error" class="error" role="alert">
+                    <div ng-message="total">The sum of below values should not exceed total spend.</div>
+                </div>
+                <div ng-messages="editShareForm.Total_Spend.$error" class="error" role="alert">
+                    <div ng-message="Total_Spend">Please enter a valid number</div>
+                </div>
+
+
+
+                <label for="">Trade spend 2015A ($M)</label>
+                <input type="text" 
+                class="form-control" 
+                name="Trade_Spend" 
+                data-ng-change="editchanl.validate(editchanl.format.Mars_Trade_Spend__c,'Trade_Spend')"
+                data-ng-model="editchanl.format.Mars_Trade_Spend__c">
+
+                <div ng-messages="editShareForm.Trade_Spend.$error" class="error" role="alert">
+                    <div ng-message="Trade_Spend">Please enter a valid number</div>
+                </div>
+
+                <label for="">Consumer Promotion Spend 2015A ($M)</label>
+                <input type="text" 
+                class="form-control" 
+                name="Promotion_Spend" 
+                data-ng-change="editchanl.validate(editchanl.format.Mars_Customer_Promotion_Spend__c,'Promotion_Spend')"
+                data-ng-model="editchanl.format.Mars_Customer_Promotion_Spend__c">
+
+                <div ng-messages="editShareForm.Promotion_Spend.$error" class="error" role="alert">
+                    <div ng-message="Promotion_Spend">Please enter a valid number</div>
+                </div>
+
+                <label for="">D&E 2015A ($M)</label>
+                <input type="text" 
+                class="form-control" 
+                name="DE_Spend" 
+                data-ng-change="editchanl.validate(editchanl.format.Mars_DandE__c,'DE_Spend')"
+                data-ng-model="editchanl.format.Mars_DandE__c">
+
+                <div ng-messages="editShareForm.DE_Spend.$error" class="error" role="alert">
+                    <div ng-message="DE_Spend">Please enter a valid number</div>
+                </div>
+
+                <label for="">Overhead 2015A ($M)</label>
+                <input type="text" class="form-control" 
+                name="OverHead_Spend" 
+                data-ng-change="editchanl.validate(editchanl.format.Mars_Overhead__c,'OverHead_Spend')"
+                data-ng-model="editchanl.format.Mars_Overhead__c">
+
+                <div ng-messages="editShareForm.OverHead_Spend.$error" class="error" role="alert">
+                    <div ng-message="OverHead_Spend">Please enter a valid number</div>
+                </div>
+            
+            </div>
+
+        </div>
+        <div class="edit-button-wrapper center-block">
+            <a class="scmBtn btn-warning" data-ng-click="editchanl.resetForm()">Reset</a>
+            <a class="scmBtn btn-primary" data-ng-click="editchanl.updateSubChannelDetails()">Save</a>          
+        </div>
+    </form>
+</div>

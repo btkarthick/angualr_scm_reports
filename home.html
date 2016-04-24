@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SCM :: Home Page </title>
+    <link rel="stylesheet" href="css/custom-bootstrap.css" />
+    <link rel="stylesheet" href="css/global.css" />
+
+</head>
+
+<body data-ng-app="app.dummy">
+
+    <div class="main-container">
+
+        <!--Dummy navigation - To simulate Sales Force Navigation-->
+
+        <!--Navigation starts-->
+        
+        <data-ng-include src="'local/navigation.templates.html'"></data-ng-include>
+                
+        <!--End of navigation-->
+
+        <!--Start of the main wrapper - goes into Sales Force-->
+
+        <div class="scm-main-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="hm-wrapper">
+
+                            <div class="hm-inner">
+
+                                <div class="hm-body">
+
+                                    <a href="forecasts.html">Channel Forecasting</a>
+
+                                    <a href="customer-prioritisation.html">
+                                        Customer<br> Prioritisation
+                                    </a>
+
+                                    <a href="bold-resource-choices.html">Bold Resource Choices</a>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <!--inject:vendors-->
+    <script src="scripts/angular.v1.5.3.min.js"></script>
+    
+    <script src="local/app-dummy.module.js"></script>
+
+</body>
+
+</html>

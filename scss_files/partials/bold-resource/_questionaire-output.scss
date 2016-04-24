@@ -1,0 +1,70 @@
+//
+// Resource Output page related styles
+// reo - stands for resource output
+//
+
+.reo{
+    
+       &-wrapper{
+            
+            width: 100%;
+               
+        }
+        
+       &-head{
+           
+           width: 100%;
+           
+           h4{ float: left; }
+           
+           .scm-downloadBtn
+           { 
+              float: right;
+              margin-top: 28px;
+            }
+           
+           @include clearfix();
+       }
+       
+      &-content{
+          
+          width: 1200px;
+          margin: 0 auto;
+          border: 1px solid #000000;
+          margin-top: 25px;
+          
+          &-left{
+              
+              float: left;
+              width: 400px;
+              border-right: 1px solid #000000;
+              height: 100px;
+          }
+          
+          &-right{
+             float: left;
+             width: 798px;
+          }
+          
+          &-header{
+              
+                background-color: #ead03c;
+                color: #000000;
+                font-size: 15px;
+                font-weight: bold;
+                padding-bottom: 6px;
+                padding-top: 6px;
+                text-align: center;
+                width: 100%;
+          }
+          
+      }
+      
+      &-top{
+          
+          width: 100%;
+          @include clearfix();
+      }
+      
+    
+}

@@ -1,0 +1,172 @@
+//
+// Styles for channel insights poge
+// ins stands for insights
+//
+
+
+.ins{ 
+    &-wrapper{
+        width: 100%;
+        padding-top: 30px;
+     }
+    
+    &-btns{
+        
+        button{
+            font-size: 13px;        
+            background-color: #0295c3;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 12px);
+            box-shadow: 3px 0 5px -3px #999, -3px 0 5px -3px #999;
+            
+            &:first-child{
+                margin-left: 5px;
+                }
+            
+            &:last-child{
+                margin-left: 15px;    
+            }
+            
+            &.active{
+                
+                background-color: #0EC6ED;
+            }
+            
+            a{
+                color: #FFFFFF;
+            }
+            
+        }
+        
+    }
+    &-badge{
+        background: grey none repeat scroll 0 0;
+        color: #fff;
+        float: right;
+        padding: 7px 10px;
+        width: 80px;
+    }
+    &-chart-title{
+        color: #006393;
+        font-weight: bold;
+        padding: 10px 0;
+        margin-top: 20px;
+        display: inline-block;
+        margin-left: 120px;
+    }
+    &-charts-wrapper{
+        width: 960px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        border: 1px dashed;
+        padding: 7px;
+    }
+    &-market{
+         &-labels{
+            left: 40px;
+            position: absolute;
+            top: 93px;
+            z-index: 1;
+            
+            ul{
+                font-size: 12px;
+            }
+            li{
+                color: #000000;
+                font-size: 12px;
+                height: 48px;
+                text-align: right;
+                width: 112px;
+                margin-left: 0 !important;
+            }
+        }
+
+        &-wrapper{
+            margin-left: 30px;
+        }
+    }
+   
+    &-growth-wrapper{
+        margin-right: 30px;
+        .ins-chart-title{
+            margin-left: 38px;
+        }
+    }
+    &-legends-wrapper{
+        color: #000000;
+        font-weight: bold;
+        margin-left: 45px;
+        width:455px;
+        div{
+             margin-right: 10px;
+        }
+
+        p{
+           
+            float: left;
+            &.fair-share{
+                border-left: 1px dashed #003974;
+                font-size: 13px;
+                font-style: italic;
+                font-weight: normal;
+                padding-left: 5px;
+            }
+        }
+        span{ 
+            display: block;
+            float: left;
+            height: 13px;
+            width: 13px;
+            margin: 3.5px 5px;
+            &.mars-share{
+                background-color:#339966;
+            }
+            &.remain-share{
+                background-color: #CCCBCA;
+            }
+            
+        }      
+    }
+    &-resource{
+        &-wrapper{
+            width: 850px;
+        } 
+        &-axis{
+            left: 71px;
+            position: absolute;
+            top: 50px;
+            color: #000;
+            font-weight: bold;
+            z-index: 1;
+            
+        }   
+        &-legends{
+            margin-left: 104px;
+            li{
+                width: 160px;
+                margin-right: 35px;
+                text-align: center;
+                margin-bottom: 30px;
+                color: #003974;
+                font-weight: bold;            
+                margin-left: 0 !important;
+            }
+                
+        }
+    } 
+    &-print-btn{
+        position: absolute;
+        right: -25px;
+        top: -12px;
+        a{
+            background: url("../images/cut-icon.png");
+            display: block;
+            width: 40px;
+            height: 20px;
+            border: 0;
+            text-indent: -9999px;
+            cursor: pointer;
+            
+        }
+    } 
+}

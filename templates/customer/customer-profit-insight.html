@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="cusIns-error-wrapper center-block" data-ng-show="cusIns.showDataAlert">
+            <div class="alert alert-danger" role="alert">
+                No customer data found.
+            </div>
+
+        </div>
+
+        <div class="cusIns-wrapper" data-ng-show="!cusIns.showDataAlert">
+
+            <div class="form-group form-inline cusIns-select">
+                <label for="">Select Y Axis Position:</label>
+                <select ng-model="cusIns.axisLineH" data-ng-change="cusIns.changeBaseLineH()" class="form-control" name="" id="">
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+            </select>
+                <label> % of {{ contributionName }} </label>
+                <button class="scmBtn btn-primary" data-ng-click="cusIns.updateChartAxis(cusIns.axisLineH)">
+            Save
+            </button>
+            </div>
+            </form>
+            <div class="ins-charts-wrapper center-block">
+                <div id="capture_wrapper">
+                    <div class="cusIns-priority-wrapper">
+                        <div class="emerging">Emerging stars</div>
+                        <div class="partner">Partners</div>
+                        <div class="niche">Niche players</div>
+                        <div class="scale">Scale</div>
+                    </div>
+
+                    <div class="ins-print-btn">
+                        <a id="save_chart"> Crop Chart </a>
+                    </div>
+
+                    <data-insight-profit chart-axis-data="cusIns.chartAxisData" base-line="cusIns.baseLineH" show-data-alert="cusIns.showDataAlert">
+
+                    </data-insight-profit>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

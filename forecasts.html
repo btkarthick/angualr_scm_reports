@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SCM :: Forecasts </title>
+    <link rel="stylesheet" href="css/custom-bootstrap.css" />
+    <link rel="stylesheet" href="css/global.css" />
+
+</head>
+
+<body data-ng-app="scm.forecasts">
+
+    <div class="main-container">
+
+        <!--Dummy navigation - To simulate Sales Force Navigation-->
+
+        <!--Navigation starts-->
+        
+        <data-ng-include src="'local/navigation.templates.html'"></data-ng-include>
+
+        <!--End of navigation-->
+
+        <!--Start of the main wrapper - goes into Sales Force-->
+
+        <div class="scm-main-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <!--Segment name display and "Go to home button" here  -->
+
+                        <div class="scm-tab-wrapper">
+
+                            <ul class="list-unstyled list-inline">
+
+                                <li class="scm-tab" ui-sref-active="active">
+                                    <a data-ui-sref="fmcg">FMCG Channel Forecast</a>
+                                </li>
+
+                                <li class="scm-tab" ui-sref-active="active">
+                                    <a data-ui-sref="category">Category-level Channel forecasts</a>
+                                </li>
+
+                                <li class="scm-tab" ui-sref-active="active">
+                                    <a data-ui-sref="format">Sub-Channel Resource Spend</a>
+                                </li>
+
+                                <li class="scm-tab" ui-sref-active="active">
+                                    <a data-ui-sref="insights">Channel Insights</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-12">
+                         <data-ui-view></data-ui-view>   
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--injecting:vendors-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+    </script>
+
+
+    <script src="scripts/lodash.custom.min.js"></script>
+    <script src="scripts/angular.v1.5.3.min.js"></script>
+    <script src="scripts/angular-ui-router.v0.2.18.min.js"></script>
+    <script src="scripts/angular-animate.v1.5.3.min.js"></script>
+    <script src="scripts/angular-sanitize.v1.5.3.min.js"></script>
+    <script src="scripts/angular-messages.v1.5.3.min.js"></script>
+    <script src="scripts/ui-bootstrap-custom-tpls-1.2.5.min.js"></script>
+    <script src="scripts/angular.toaster.v1.2.1.min.js"></script>
+
+    <script src="scripts/angular.ngforce.js"></script>
+
+    <script src="local/local-ng-force.config.js"></script>
+
+
+    <script src="scripts/ngforce.sf.template.js"></script>
+    <!--<script src="scripts/ngforce.visualforce.remoting.js"></script>-->
+
+    <!--inject:config-->
+    <script src="scmapp/scm.config.js"></script>
+    
+    <!--inject:templates js-->
+    <script src="scmapp/forecasts/forecasts.templates.js"></script>
+    <!--inject:module-->
+    <script src="scmapp/forecasts/scm-forecasts.module.js"></script>
+    
+    <!--inject:controller-->
+    <script src="scmapp/forecasts/fmcg-channel/fmcg-listing.controller.js"></script>
+
+    <script src="scmapp/forecasts/category-channel/category-listing.controller.js"></script>
+    <script src="scmapp/forecasts/category-channel/category-update.controller.js"></script>
+    <script src="scmapp/forecasts/sub-channel/sub-channel.controller.js"></script>
+    <script src="scmapp/forecasts/sub-channel/sub-channel-update.controller.js"></script>
+    <script src="scmapp/forecasts/channel-insights/insights.controller.js"></script>
+    
+    <script src="local/forecasts/fmcg.service.js"></script>
+    <script src="local/forecasts/category.service.js"></script>
+    <script src="local/forecasts/sub-channel.service.js"></script>
+    <script src="local/forecasts/insights-chart.service.js"></script>
+    
+    <!--end of local inject of services-->
+
+    <script src="scmapp/forecasts/channel-insights/resource-spend.service.js"></script>
+    <script src="scmapp/forecasts/channel-insights/market-position.service.js"></script>
+
+    <!--inject:directive-->
+    <script src="scmapp/forecasts/channel-insights/insights-market.directive.js"></script>
+    <script src="scmapp/forecasts/channel-insights/insights-resource.directive.js"></script>
+  
+    <!--inject:filter-->
+    <script src="scmapp/common/scm.allfilters.js"></script>
+
+    <script src="scmapp/common/scm.service.js"></script>
+    
+</body>
+
+</html>

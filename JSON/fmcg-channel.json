@@ -1,0 +1,12 @@
+[{"statusCode":200,"type":"rpc","tid":6,"ref":false,"action":"SCMChannelReport","method":"getFMCGForecast"
+,"result":{"forecasts":[{"channelName":"Modern grocery – Super/Hyper","className":"channel__modern","id"
+:"a1Rf0000000B5JhEAK","sales":[130461,132233,0.3,48]},{"channelName":"Modern grocery - LARs","className"
+:"format__lar-inc","id":"a1Rf0000000B5JiEAK","sales":[23697,37231,9.5,14]},{"channelName":"Convenience"
+,"className":"channel__convenience","id":"a1Rf0000000B5JjEAK","sales":[33249,42085,4.8,15]},{"channelName"
+:"Traditional independent stores","className":"channel__traditional-independent","id":"a1Rf0000000B5JkEAK"
+,"sales":[27654,29194,1.1,11]},{"channelName":"Pet Specialist","className":"channel__pet-specialist"
+,"id":"a1Rf0000000B5JlEAK","sales":[1483,2471,10.7,1]},{"channelName":"Other specialist","className"
+:"channel__other-specialist","id":"a1Rf0000000B5JmEAK","sales":[7365,8257,2.3,3]},{"channelName":"Ecommerce"
+,"className":"channel__ecommerce","id":"a1Rf0000000B5JnEAK","sales":[13069,21750,10.7,8]},{"channelName"
+:"Out of Home","className":"channel__out-of-home","id":"a1Rf0000000B5JoEAK","sales":[883,1140,5.3,0]
+}],"totalsales":{"fmcgsales":[237861,274361,100],"fmcgtransaction":[0,0,0]}}}]

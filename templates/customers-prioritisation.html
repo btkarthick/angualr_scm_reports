@@ -1,0 +1,28 @@
+<div class="cust-wrapper">
+
+    <div class="scm-tab-wrapper">
+
+        <ul class="list-unstyled list-inline">
+
+            <li class="scm-tab" ui-sref-active="active">
+                <a data-ui-sref="customers.customers_listing">Customer Level Data</a>
+            </li>
+
+            <li class="scm-tab" ui-sref-active="active">
+                <a data-ui-sref="customers.customer_insights">Customer Insights</a>
+            </li>
+
+            <li class="scm-tab" ui-sref-active="active">
+                <a data-ui-sref="customers.resource_planning">Detailed Resource Planning</a>
+            </li>
+            <li class="scm-tab" ui-sref-active="active">
+                <a data-ui-sref="customers.faq">FAQ</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!--All the sub view will go in to this element-->
+    <data-ui-view></data-ui-view>
+
+</div>

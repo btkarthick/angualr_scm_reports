@@ -1,0 +1,89 @@
+{
+  "chartData": [
+    {
+      "Customer": "Walmart",
+      "Mars_Contribution_2015": 75,
+      "Mars_Category_Sales_By_Customer_CAGR": 2.3,
+      "Mars_Category_Sales_By_Customer_2015": 1000
+    },
+    {
+      "Customer": "Walgreens",
+      "Mars_Contribution_2015": 79.84,
+      "Mars_Category_Sales_By_Customer_CAGR": 2.36,
+      "Mars_Category_Sales_By_Customer_2015": 10
+    },
+    {
+      "Customer": "Albertsons/Safeway",
+      "Mars_Contribution_2015": 78.6,
+      "Mars_Category_Sales_By_Customer_CAGR": 3.84,
+      "Mars_Category_Sales_By_Customer_2015": 20
+    },
+    {
+      "Customer": "Kroger",
+      "Mars_Contribution_2015": 72.73,
+      "Mars_Category_Sales_By_Customer_CAGR": 4.78,
+      "Mars_Category_Sales_By_Customer_2015": 700
+    },
+    {
+      "Customer": "Meijer",
+      "Mars_Contribution_2015": 80.05,
+      "Mars_Category_Sales_By_Customer_CAGR": 2.5,
+      "Mars_Category_Sales_By_Customer_2015": 700
+    },
+    {
+      "Customer": "Family Dollar",
+      "Mars_Contribution_2015": 72.49,
+      "Mars_Category_Sales_By_Customer_CAGR": 2.3,
+      "Mars_Category_Sales_By_Customer_2015": 500
+    },
+    {
+      "Customer": "Dollar",
+      "Mars_Contribution_2015": 68.09,
+      "Mars_Category_Sales_By_Customer_CAGR": 1.8,
+      "Mars_Category_Sales_By_Customer_2015": 500
+    },
+    {
+      "Customer": "Kmart",
+      "Mars_Contribution_2015": 81.55,
+      "Mars_Category_Sales_By_Customer_CAGR": 2.9,
+      "Mars_Category_Sales_By_Customer_2015": 400
+    },
+    {
+      "Customer": "Target",
+      "Mars_Contribution_2015": 73.6,
+      "Mars_Category_Sales_By_Customer_CAGR": 3,
+      "Mars_Category_Sales_By_Customer_2015": 50
+    },
+    {
+      "Customer": "CVS",
+      "Mars_Contribution_2015": 68.6,
+      "Mars_Category_Sales_By_Customer_CAGR": 3.2,
+      "Mars_Category_Sales_By_Customer_2015": 70
+    },
+    {
+      "Customer": "BJs",
+      "Mars_Contribution_2015": 64.6,
+      "Mars_Category_Sales_By_Customer_CAGR": 4.8,
+      "Mars_Category_Sales_By_Customer_2015": 800
+    },
+    {
+      "Customer": "Publix",
+      "Mars_Contribution_2015": 78.09,
+      "Mars_Category_Sales_By_Customer_CAGR": 4.3,
+      "Mars_Category_Sales_By_Customer_2015": 650
+    },
+    {
+      "Customer": "SuperValue",
+      "Mars_Contribution_2015": 79.09,
+      "Mars_Category_Sales_By_Customer_CAGR": 3.6,
+      "Mars_Category_Sales_By_Customer_2015": 750
+    },
+    {
+      "Customer": "Delhaize",
+      "Mars_Contribution_2015": 83.09,
+      "Mars_Category_Sales_By_Customer_CAGR": 3.9,
+      "Mars_Category_Sales_By_Customer_2015": 320
+    }
+  ],
+  "Avg_Mars_RSV_Growth": 2.5
+}

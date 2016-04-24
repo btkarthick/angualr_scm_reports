@@ -1,0 +1,52 @@
+<div class="">
+
+    <h4> Overall FMCG Market: Channel forecasts</h4>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center scm-table">
+
+            <tbody>
+                <tr class="heading-row">
+                    <td rowspan="2" class="heading">Channel</td>
+                    <td colspan="4" class="heading"> FMCG Total Sales (RSV) by Channel </td>
+                    <td colspan="4" class="heading"> FMCG Number of Transactions by Channel </td>
+
+                </tr>
+
+                <tr>
+                    <td class="heading"> 2015A<br/>(M) </td>
+                    <td class="heading"> 2020F<br/>(M) </td>
+                    <td class="heading"> CAGR<br/>(15-20)</td>
+                    <td class="heading">% of<br/>Total</td>
+                    <td class="heading"> 2015A<br/>(M) </td>
+                    <td class="heading"> 2020F<br/>(M) </td>
+                    <td class="heading"> CAGR<br/>(15-20) </td>
+                    <td class="heading"> % of<br/>Total </td>
+                </tr>
+
+                <tr data-ng-repeat="channel in fmcg.fmcgForecast.forecasts track by $index">
+
+                    <td class="{{channel.className}}" 
+                        data-ng-bind="channel.channelName"></td>
+                  
+                    <td class="channel__cells" 
+                        data-ng-repeat="sale in channel.sales track by $index" 
+                        data-ng-bind="sale | formatNumber | replaceZero"></td>
+                </tr>
+                
+                <tr class="channel__total">
+                    <td>Total</td>
+                    <td data-ng-bind="fmcg.fmcgForecast.totalsales.fmcgsales[0] | formatNumber">100</td>
+                    <td data-ng-bind="fmcg.fmcgForecast.totalsales.fmcgsales[1] | formatNumber">100</td>
+                    <td></td>
+                    <td data-ng-bind="fmcg.fmcgForecast.totalsales.fmcgsales[2] + '%'"></td>
+                </tr>
+
+            </tbody>
+
+
+        </table>
+    </div>
+
+
+</div>

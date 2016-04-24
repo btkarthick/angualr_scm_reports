@@ -1,0 +1,108 @@
+// ********************************************************************************//
+// **** Customer related styles ***** //
+// **** Shall be considered as home page for customer sections ***** //
+// **** cust stands for customer  //
+// ********************************************************************************* //
+
+.cust{
+    
+    &-wrapper{
+        
+        width: 100%;
+        td.heading{
+            color: #fff !important;
+        } 
+        .scm-table tr > td {
+            color: #000;
+        }
+        fieldset{
+            border: 1px solid #0295C2;
+            margin: 0 2px;
+            padding: 20px;
+            width: 330px;
+            & legend{
+                font-weight: normal;
+                color: #006393;
+                display: inline;
+                padding: 3px;
+                font-size: 14px;
+                line-height: inherit;
+                border: 0; 
+            }
+        }
+        
+        
+    }
+    &-name{
+        background: grey;
+        color: #fff !important;
+        padding: 8px 35px 8px 8px !important;
+        &-heading{
+            padding: 47px !important;
+        };
+    }
+    
+    &-other{
+           
+            i{
+                font-size: 23px;
+                color: #0ec6ed;
+            }            
+    }
+    
+    &-form{
+       
+        width: 100%;
+        margin-top: 30px;
+        
+        form{
+            float: right;
+            padding-right: 10px;
+            
+            label{ color: #333333 !important; }
+        
+            select{
+                
+                width: 150px !important;
+                margin-right: 10px;
+            }
+        }
+        
+    }
+    
+    &-dotted-line{
+        
+        width: 100%;
+        margin:20px 0;
+        border: 1px dashed;
+    }
+    
+    &-heading{
+        
+        padding-bottom: 15px;
+        padding-top: 10px;
+        
+        @include clearfix();
+        
+        section{
+             
+             &:first-child{ 
+                 
+                 float: left;
+                 color: #1b8aba;
+                 font-size: 18px;
+                 margin-top: 5px;
+              }
+              
+              &:last-child{
+                  
+                  float: right;
+                  padding-right: 10px;
+              }
+             
+        }
+    }
+}
+
+@import "cus-insights",
+        "_cus-prioritisation";

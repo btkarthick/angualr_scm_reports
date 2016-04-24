@@ -1,0 +1,131 @@
+//
+// This file contains predefined styles for
+// Channel & Format
+//
+//
+
+.channel{
+    
+    &__modern{
+        
+            background-color: #003974;
+           
+     }
+     
+     &__convenience{
+         
+         background-color: #799FFF;
+           
+     }
+     
+     &__traditional-independent{
+         
+         background-color: #BD832D;
+           
+     }
+     
+     &__pet-specialist{
+         
+         background-color: #777777;
+            color: #000000;
+      }
+      
+      &__other-specialist{
+          
+          background-color: #2E4353;
+            color: #FFFFFF;
+      }
+     
+     &__ecommerce{
+         
+         background-color: #5E1D65;
+           
+     }
+     
+     &__out-of-home{
+         
+         background-color: #000000;
+           
+     }
+     
+        
+     &__total{
+         
+          background-color: #FFFFFF;
+          color: #101010 !important;
+          td{
+              color: #101010 !important;
+          }
+     }
+     
+     &__cells{
+         
+         color: #101010 !important;
+     }
+     
+     &-edit{
+         
+         span{ 
+             display: block;
+             background: url('../images/edit-icon.png') 0 0 no-repeat;
+             width: 23px;
+             height: 23px;
+             margin-left: 10px;
+             cursor: pointer;
+             text-indent: -9999px;
+         }
+     }  
+}
+
+.format{
+    
+    &__lar-inc{
+        
+        background-color: #2FBFE2;
+       
+    }
+    
+    &__hypermarket{
+        
+        background-color: #003974;
+    }
+    
+    &__supermarket{
+        
+        background-color: #006393;
+    }
+    
+    &__multiple-convenience{
+        
+        background-color:#799FFF;
+    }
+    
+    &__traditional-convenience{
+        
+        background-color:#BD832D;
+    }
+    
+    &__specialist-pet{
+        
+        background-color:#B2B2B2;
+        color: #000000 !important;
+    }
+    
+    &__professional-and-vet{
+        
+        background-color:#B2B2B2;
+        color: #000000 !important;
+         border-bottom: 1px solid #ffffff !important;
+    }
+    
+    &__drugstore-pharmacy{
+        background-color:#DDDDDD;
+        color: #000000 !important;
+        border-bottom: 1px solid #FFFFFF !important;
+    }
+    
+    &__specialist-other{
+        background-color:#DDDDDD;
+        color: #000000 !important;
+    }
+}

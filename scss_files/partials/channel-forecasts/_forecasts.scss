@@ -1,0 +1,21 @@
+// ********************************************************************************//
+// **** Forecasts related styles ***** //
+// **** Shall be considered as home page for forecasts sections ***** //
+// **** fc stands for forecasts  //
+// ********************************************************************************* //
+
+.fc{
+    
+    &-wrapper{
+        
+        width: 100%;
+    }
+}
+
+// ********* Channel forecast section  related styles starts  ************//
+         
+    @import "partials/channel-forecasts/fmcg",
+            "partials/channel-forecasts/channel-format",
+            "partials/channel-forecasts/channel-insights";
+
+// ******** End of page Channel forecast section  ************//

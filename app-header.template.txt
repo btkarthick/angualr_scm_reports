@@ -1,0 +1,10 @@
+/**
+ * SCM Application - Powered by Angularjs and SalesForce.
+ *
+ * The coding and best practices are heavily infulenced from 
+ * JHON PAPA's excellent angular coding style guide
+ * https://github.com/johnpapa/angular-styleguide
+ *
+ * This is the minified and bundled version of SCM Application files. 
+ * 
+ */

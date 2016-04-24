@@ -1,0 +1,148 @@
+[
+    {
+        "statusCode": 200,
+        "type": "rpc",
+        "tid": 6,
+        "ref": false,
+        "action": "SCMChannelReport",
+        "method": "RetriveChartData",
+        "result": {
+            "chartData": [
+                {
+                    "bgColor": "#2FBFE2",
+                    "categoryToday": 0,
+                    "channelGrowth": 0,
+                    "format": "LARs",
+                    "futureCategory": 0,
+                    "hideCategory": true,
+                    "marsCategory": 0,
+                    "marsSpend": 2040,
+                    "remainingShare": 0,
+                    "sharePercent": 0
+                },
+                {
+                    "bgColor": "#003974",
+                    "categoryToday": 0,
+                    "channelGrowth": 0,
+                    "format": "HYPERS/SUPERS",
+                    "futureCategory": 0,
+                    "hideCategory": true,
+                    "marsCategory": 0,
+                    "marsSpend": 32,
+                    "remainingShare": 0,
+                    "sharePercent": 0
+                },
+                {
+                    "bgColor": "#003974",
+                    "categoryToday": 1069,
+                    "channelGrowth": 0,
+                    "format": "HYPERMARKET",
+                    "futureCategory": 41,
+                    "hideCategory": false,
+                    "marsCategory": 345.30,
+                    "marsSpend": 12,
+                    "remainingShare": 723.70,
+                    "sharePercent": 32.30
+                },
+                {
+                    "bgColor": "#006393",
+                    "categoryToday": 1125,
+                    "channelGrowth": 0,
+                    "format": "SUPERMARKET",
+                    "futureCategory": 43,
+                    "hideCategory": false,
+                    "marsCategory": 355.60,
+                    "marsSpend": 10,
+                    "remainingShare": 769.40,
+                    "sharePercent": 31.61
+                },
+                {
+                    "bgColor": "#003974",
+                    "categoryToday": 0,
+                    "channelGrowth": 0,
+                    "format": "MODERN GROCERY CONV",
+                    "futureCategory": 0,
+                    "hideCategory": true,
+                    "marsCategory": 0,
+                    "marsSpend": 0,
+                    "remainingShare": 0,
+                    "sharePercent": 0
+                },
+                {
+                    "bgColor": "#799FFF",
+                    "categoryToday": 174.5,
+                    "channelGrowth": 6.1,
+                    "format": "MULTIPLE CONVENIENCE",
+                    "futureCategory": 9.4,
+                    "hideCategory": false,
+                    "marsCategory": 74.20,
+                    "marsSpend": 0,
+                    "remainingShare": 100.30,
+                    "sharePercent": 42.52
+                },
+                {
+                    "bgColor": "#BD832D",
+                    "categoryToday": 124.6,
+                    "channelGrowth": 0.6,
+                    "format": "TRADITIONAL CONVENIENCE",
+                    "futureCategory": 5.1,
+                    "hideCategory": false,
+                    "marsCategory": 46.80,
+                    "marsSpend": 0,
+                    "remainingShare": 77.80,
+                    "sharePercent": 37.56
+                },
+                {
+                    "bgColor": "#BD832D",
+                    "categoryToday": 24.3,
+                    "channelGrowth": -6.8,
+                    "format": "TRADITIONAL INDEPENDENT STORES",
+                    "futureCategory": 0.7,
+                    "hideCategory": false,
+                    "marsCategory": 7.60,
+                    "marsSpend": 0,
+                    "remainingShare": 16.70,
+                    "sharePercent": 31.28
+                },
+                {
+                    "bgColor": "#777777",
+                    "categoryToday": 0,
+                    "channelGrowth": 0,
+                    "format": "PET SPECIALIST",
+                    "futureCategory": 0,
+                    "hideCategory": true,
+                    "marsCategory": 0,
+                    "marsSpend": 0,
+                    "remainingShare": 0,
+                    "sharePercent": 0
+                },
+                {
+                    "bgColor": "#2E4353",
+                    "categoryToday": 0,
+                    "channelGrowth": 0,
+                    "format": "OTHER SPECIALIST",
+                    "futureCategory": 0,
+                    "hideCategory": true,
+                    "marsCategory": 0,
+                    "marsSpend": 0,
+                    "remainingShare": 0,
+                    "sharePercent": 0
+                },
+                {
+                    "bgColor": "#5E1D65",
+                    "categoryToday": 0,
+                    "channelGrowth": 0,
+                    "format": "ECOMMERCE",
+                    "futureCategory": 0,
+                    "hideCategory": true,
+                    "marsCategory": 0,
+                    "marsSpend": 0,
+                    "remainingShare": 0,
+                    "sharePercent": 0
+                }
+            ],
+            "fairShare": 32.95,
+            "unitName": "UK PET"
+        }
+    }
+]

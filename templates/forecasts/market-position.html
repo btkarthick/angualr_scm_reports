@@ -1,0 +1,45 @@
+<div class="clearfix">
+    <div class="pull-left ins-market-labels">
+        <ul class="list-unstyled">
+            <li data-ng-repeat="legend in mar.legends track by $index" data-ng-bind="legend"></li>
+        </ul>
+    </div>
+
+
+    <div class="pull-left ins-market-wrapper">
+
+        <p class="ins-chart-title text-center">Channel size & Mars’ share of total channel ($M)</p>
+
+        <div class="" id="channel_size"></div>
+        <div class="chart-canvas" id="chart_canvas_size">
+            <canvas id="print_market_size"></canvas>
+        </div>
+        
+        <div class="ins-legends-wrapper clearfix">
+            <div class="pull-left">
+                <span class="mars-share"></span>
+                <p>Mars Share of channel
+                    <br>(RSV)</p>
+            </div>
+            <div class="pull-left">
+                <span class="remain-share"></span>
+                <p>Remaining Channel
+                    <br>(RSV)</p>
+            </div>
+            <div class="pull-left">
+                <p class="fair-share">Mars fair share
+                    <br>{{ mar.fairShare }}</p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="pull-right ins-growth-wrapper">
+
+        <p class="ins-chart-title text-center">Channel Growth (%)</p>
+        <div class="" id="channel_growth"></div>
+        <div class="chart-canvas" id="chart_canvas_growth">
+            <canvas id="print_market_position"></canvas>
+        </div>
+    </div>
+    <a href="" id="download_anchor" class="dl-anchor">Download Anchor</a>

@@ -1,0 +1,56 @@
+.cusIns{
+    &-error-wrapper{
+        width: 50%;
+        margin-top:20px;
+    }
+    &-select{
+        margin-top: 30px;
+        margin-left: 30px;
+        label{
+            color: #333333;
+        }
+        
+        .scmBtn{ margin-left: 10px; }
+    }
+    &-avg-legend{
+        width: 190px;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        margin-left: 90px;
+        color: #006393;
+        span{
+            border-top: 2px solid #ff0000;
+            width: 20px;
+            display: inline-block;
+            height: 5px;
+        }
+    }
+    &-priority-wrapper{
+        div{
+           background: red;
+            color: #ffffff;
+            position: absolute;
+            padding: 8px;
+            text-align: center;
+            width: 130px;
+             z-index: 3;
+        }
+        .emerging{
+            top:39px;
+            left: 98px;
+        }
+        .niche{
+            bottom: 45px;
+            left: 98px;
+        }
+        .partner{
+            top: 39px;
+            right: 94px;
+        }
+        .scale{
+            bottom: 45px;
+            right: 94px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.fmcg{
+    &-table{
+        .heading{
+            
+            &-row{
+                
+                td{
+                    
+                    &:first-child{
+                        
+                        width: 160px;
+                        
+                    }
+                    
+                }
+
+            }
+
+        }
+    }
+    
+}

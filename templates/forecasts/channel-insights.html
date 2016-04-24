@@ -1,0 +1,30 @@
+<div class="ins-wrapper">
+
+    <div class="ins-btns clearfix">
+        <button class="scmBtn" data-ng-class="{ 'active' : inchart.showMarket }" data-ng-click="inchart.setToogleCharts('market');">
+            <a href="">Market Position</a>
+        </button>
+        <button class="scmBtn" data-ng-class="{ 'active' : inchart.showResources }" data-ng-click="inchart.setToogleCharts('resource');">
+            <a href="">Resources Spend</a>
+        </button>
+        <!--<div class="ins-badge">
+            UK Pet
+        </div>-->
+
+    </div>
+    <div class="ins-charts-wrapper center-block">
+        <div id="capture_wrapper">
+            <div data-ng-show="inchart.showMarket" class="ins-print-btn">
+                <a id="save_chart_market"> Crop Chart </a>
+            </div>
+
+            <div data-ng-show="inchart.showResources" class="ins-print-btn">
+                <a id="save_chart_resource"> Crop Chart </a>
+            </div>
+
+            <data-insights-market data-ng-show="inchart.showMarket"></data-insights-market>
+
+            <data-insights-resource data-ng-show="inchart.showResources"></data-insights-resource>
+        </div>
+    </div>
+</div>

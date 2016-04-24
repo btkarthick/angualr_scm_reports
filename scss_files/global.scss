@@ -1,0 +1,39 @@
+// ****** GLOBAL STYLES ************* //
+
+// *********************************//
+// Boostrap imports goes here
+// 
+//**********************************//
+
+
+// Boostrap mixins imports - Just only import what you need
+
+@import "vendors/bootstrap/variables",
+        "vendors/bootstrap/mixins";    
+
+// *********************************//
+
+// ***** SCM - related imports ***********//
+
+@import "base/variables", 
+        "base/general",
+        "vendors/toaster",
+        "base/table-scm";
+
+
+// ********** SCM - generic styles related to induvidual sections ******/        
+        
+ @import "partials/modal", 
+         "partials/tab",
+         "partials/_edit-form",
+         "partials/home",
+         "partials/channel-forecasts/forecasts",
+         "partials/customers/listing",
+         
+         "partials/bold-resource/resource-planning",
+         "partials/bold-resource/questionaire-input",
+         "partials/bold-resource/questionaire-output"
+         
+         
+// ****** End of generic styles related to induvidual sections **********/         
+         

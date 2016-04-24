@@ -1,0 +1,171 @@
+<button type="button" class="close" aria-label="Close" data-ng-click="editCust.dismissModal()">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+<div class="modal-header">
+    <h3 class="modal-title"> Edit Customer - {{ editCust.custEntities.SCM_Customer__r.Name }}
+    </h3>
+</div>
+
+<div class="modal-body">
+    <form name="editCustomerForm">
+        <div class="row edit-form-wrapper">
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Customer Information</h5>
+                <div>
+                    <label for="">Customer Priority</label>
+                    <select class="form-control" data-ng-model="editCust.strategicModel" name="SelectStrategy" id="SelectStrategy" data-ng-disabled="editCust.custEntities.Other_Customer__c" data-ng-change="editCust.mapStrategicData()" data-ng-options="strategy.Name for strategy in editCust.stratergicData track by strategy.Id">
+                    </select>
+                </div>
+                <div>
+                    <label for="">Mark As Other</label>
+                    <input data-ng-disabled="editCust.custEntities.SCM_Customer__r.Name === 'Others'? true : false" class="" data-ng-change="editCust.resetStrategicModel(editCust.custEntities.Other_Customer__c)" data-ng-model="editCust.custEntities.Other_Customer__c" type="checkbox" />
+                </div>
+            </div>
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Total FMCG Sales</h5>
+
+                <label for="">2015A ($M)</label>
+                <input type="text" class="form-control" name="FMCG_Actual__c" data-ng-change="editCust.validate(editCust.custEntities.FMCG_Actual__c,'FMCG_Actual__c')"
+                    data-ng-model="editCust.custEntities.FMCG_Actual__c" id="">
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="FMCG_Actual__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 ($M)</label>
+                <input type="text" class="form-control" name="FMCG_Forecast__c" data-ng-change="editCust.validate(editCust.custEntities.FMCG_Forecast__c,'FMCG_Forecast__c')"
+                    data-ng-model="editCust.custEntities.FMCG_Forecast__c" id="">
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="FMCG_Forecast__c">Please enter a valid number</div>
+                </div>
+
+
+            </div>
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Overall Category Sales by Customer (RSV)</h5>
+                <label for="">2015A ($M)</label>
+                <input type="text" class="form-control" data-ng-required="true" data-ng-change="editCust.validate(editCust.custEntities.Overall_Actual__c,'Overall_Actual__c')"
+                    name="Overall_Actual__c" data-ng-model="editCust.custEntities.Overall_Actual__c" id="">
+
+                <div ng-messages="editCustomerForm.Overall_Actual__c.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Overall_Actual__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 ($M)</label>
+                <input type="text" class="form-control" data-ng-required="true" data-ng-change="editCust.validate(editCust.custEntities.Overall_Forecast__c,'Overall_Forecast__c');
+                editCust.calPercentTotal('overallForecast', 'Overall_Total__c' ,editCust.custEntities.Overall_Forecast__c,'Overall_Forecast__c')"
+                    name="Overall_Forecast__c" data-ng-model="editCust.custEntities.Overall_Forecast__c" id="">
+
+                <div ng-messages="editCustomerForm.Overall_Forecast__c.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Overall_Forecast__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 % of total</label>
+                <input type="text" class="form-control" data-ng-model="editCust.custEntities.Overall_Total__c" id="" data-ng-readonly="true">
+
+
+            </div>
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Mars Category Sales by Customer (RSV)</h5>
+                <label for="">2015A ($M)</label>
+                <input type="text" class="form-control" data-ng-required="true" data-ng-change="editCust.validate(editCust.custEntities.Mars_Actual__c,'Mars_Actual__c')"
+                    name="Mars_Actual__c" data-ng-model="editCust.custEntities.Mars_Actual__c" id="">
+
+                <div ng-messages="editCustomerForm.Mars_Actual__c.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Mars_Actual__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 ($M)</label>
+                <input type="text" class="form-control" data-ng-required="true" data-ng-change="editCust.validate(editCust.custEntities.Mars_Forecast__c,'Mars_Forecast__c');
+                editCust.calPercentTotal('MarsSalesForecast','Mars_Total__c',editCust.custEntities.Mars_Forecast__c,'Mars_Forecast__c')"
+                    name="Mars_Forecast__c" data-ng-model="editCust.custEntities.Mars_Forecast__c" id="">
+
+                <div ng-messages="editCustomerForm.Mars_Forecast__c.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Mars_Forecast__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 % of total</label>
+                <input type="text" class="form-control" data-ng-model="editCust.custEntities.Mars_Total__c" id="" data-ng-readonly="true">
+
+
+            </div>
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">{{ contributionName }}</h5>
+
+                <label for="">2015A ($M)</label>
+                <input type="text" class="form-control" data-ng-required="true" data-ng-change="editCust.validate(editCust.custEntities.Contribution_Actual__c,'Contribution_Actual__c')"
+                    name="Contribution_Actual__c" data-ng-model="editCust.custEntities.Contribution_Actual__c" id="">
+
+                <div ng-messages="editCustomerForm.Contribution_Actual__c.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Contribution_Actual__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 ($M)</label>
+                <input type="text" class="form-control" data-ng-required="true" data-ng-change="editCust.validate(editCust.custEntities.Contribution_Forecast__c,'Contribution_Forecast__c');
+                editCust.calPercentTotal('MarsContriForecast','Contribution_Total__c',editCust.custEntities.Contribution_Forecast__c,'Contribution_Forecast__c')"
+                    name="Contribution_Forecast__c" data-ng-model="editCust.custEntities.Contribution_Forecast__c" id="">
+
+                <div ng-messages="editCustomerForm.Contribution_Forecast__c.$error" class="error" role="alert">
+                    <div ng-message="required">This field is mandatory</div>
+                </div>
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Contribution_Forecast__c">Please enter a valid number</div>
+                </div>
+
+                <label for="">2020 % of total</label>
+                <input type="text" class="form-control" data-ng-model="editCust.custEntities.Contribution_Total__c" id="" data-ng-readonly="true">
+
+
+            </div>
+
+            <div class="form-group col-xs-4">
+                <h5 class="text-center">Misc</h5>
+                <label for="">Other ($M)</label>
+                <input type="text" class="form-control" name="Other__c" data-ng-model="editCust.custEntities.Other__c" data-ng-change="editCust.validate(editCust.custEntities.Other__c,'Other__c')"
+                    id="">
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Other__c">Please enter a valid number</div>
+                </div>
+
+
+                <label for="">Trade ($M)</label>
+                <input type="text" class="form-control" name="Trade__c" data-ng-model="editCust.custEntities.Trade__c" data-ng-change="editCust.validate(editCust.custEntities.Trade__c,'Trade__c')"
+                    id="">
+
+                <div ng-messages="editCustomerForm.$error" class="error" role="alert">
+                    <div ng-message="Trade__c">Please enter a valid number</div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="edit-button-wrapper center-block">
+            <a class="scmBtn btn-warning" data-ng-click="editCust.resetForm()">Reset</a>
+            <a class="scmBtn btn-primary" data-ng-click="editCust.editCustomer()">Save</a>
+       </div>
+    </form>
+</div>

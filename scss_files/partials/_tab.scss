@@ -1,0 +1,49 @@
+.scm{
+    &-tab
+    {
+        background-color: $tab-bg;      
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        min-width: 160px;
+        margin-left: 10px;
+        &:first-child{
+            margin-left: 0;
+        }
+        
+        &:hover{
+            @extend .active;
+        }
+        
+        a{
+            color: $tab-color;
+             padding: 10px;
+             display: inline-block;
+             &:hover{
+                 color: $tab-color;
+                 text-decoration: none;
+             }
+        }
+        
+        &-wrapper{
+            
+            border-bottom: 3px solid $tab-active-bg;
+            padding-top: 25px;
+            
+            ul{
+                margin-bottom: 0;
+                padding-left: 15px;
+                li{
+                    text-align: center;
+                }
+            }
+            
+            .active{
+                background-color: $tab-active-bg;
+            }
+            
+        }
+                
+    }
+    
+}
+

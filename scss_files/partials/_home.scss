@@ -1,0 +1,100 @@
+//
+// Home page related styles goes here
+//
+
+// hm - stands for home
+
+.hm{
+    
+    &-wrapper{
+        
+        width: 100%;
+        padding-top: 50px;
+        
+       }
+       
+       &-inner{
+           
+           width: 750px;
+           margin: 0 auto;
+           border: 1px solid #dddddd;
+           border-radius: 4px;
+           
+       }
+       
+       &-header{
+           
+                background-color: #f8f8f8;
+                border-color: #e7e7e7;
+                padding-bottom: 18px;
+                padding-left: 15px;
+                padding-top: 15px;
+                color: #333333;
+                
+                
+                .form-group{
+                    
+                    label{
+                        
+                        font-weight: normal;
+                        font-size: 14px;
+                     }
+                    
+                    SELECT{
+                    
+                    width: 180px;
+                }
+                    
+                }
+                
+       }
+       
+       &-body{
+           
+           padding: 70px 45px;
+           @include clearfix();
+           
+           a{
+
+                background-color: #0295c3;
+                border-radius: 5px;
+                color: #ffffff;
+                cursor: pointer;
+                display: block;
+                float: left;
+                font-size: 14px;
+                text-align: center;
+               
+               &:first-child{
+                   
+                    height: 65px;
+                    margin-right: 30px;
+                    padding-top: 20px;
+                    width: 190px;
+               }
+               
+               &:nth-child(2n){
+                  
+                  height: 65px;
+                   width: 185px;
+                   padding-top: 11px;
+               }
+               
+               &:last-child{
+                   
+                    height: 65px;
+                    margin-left: 30px;
+                    padding-top: 20px;
+                    width: 200px;
+               }
+               
+               
+               &:hover{
+                   
+                   color: #FFFFFF;
+                   
+               }            
+           }
+           
+       }
+}

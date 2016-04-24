@@ -1,0 +1,141 @@
+<div class="cust-wrapper">
+    <!--<h4>Customer Data</h4>-->
+
+    <!--Top form starts - Should be align to the right-->
+
+    <div class="cust-form clearfix">
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="selContribType">
+                    Select Contribution or GMAC or NSV:
+                </label>
+
+                <select class="form-control" 
+                        name="selContribType" 
+                        id="selContribType" 
+                        data-ng-model="custLvl.currentContribution"
+                        data-ng-options="contribution.Name for contribution in custLvl.contributionData | sortContribution track by  contribution.Id"></select>
+
+                <button class="scmBtn btn-primary" 
+                        data-ng-click="custLvl.updateCustContribution(custLvl.currentContribution.Id)">
+                        Save
+                </button>
+            </div>
+
+    </div>
+
+    <!--End of top form-->
+
+    <div class="cust-dotted-line"></div>
+
+    <div class="cust-heading">
+
+        <section> Customer Data </section>
+
+        <section>
+            <button class="scmBtn btn-primary" 
+                    data-ng-click="custLvl.addCustModal()">
+                Add Customer
+            </button>
+        </section>
+
+    </div>
+    
+    
+    <div class="table-responsive">
+        <table class="table table-bordered text-center scm-table">
+
+            <tbody>
+
+                <tr class="heading-row">
+                    <td rowspan="2" class="heading cust-name-heading">Customer</td>
+                    <td rowspan="2" class="heading cust-name-heading">Marked<br>Other</td>
+                    <td colspan="2" class="heading sep-column">Total FMCG Sales</td>
+                    <td colspan="3" class="heading sep-column">Overall Category Sales by<br/>Customer (RSV)</td>
+                    <td colspan="3" class="heading sep-column">Mars Category Sales by<br/>Customer (RSV)</td>
+                    <td colspan="3" class="heading sep-column">{{ contributionName }}</td>
+                    <td rowspan="2" class="heading"> Other<br/>($M) </td>
+                    <td rowspan="2" class="heading"> Trade<br/>($M) </td>
+                    <td rowspan="2" class="heading"> Adjusted<br/>Customer<br/>Priority </td>
+                    <td rowspan="2" class="heading scm-pad16">Edit</td>
+                </tr>
+
+                <tr>
+                    <td class="heading">2015<br/>($M)</td>
+                    <td class="heading sep-column">2020<br/>($M)</td>
+
+                    <td class="heading">2015<br/>($M)</td>
+                    <td class="heading">2020<br/>($M)</td>
+                    <td class="heading sep-column">2020 %<br/>of total</td>
+
+                    <td class="heading">2015<br/>($M)</td>
+                    <td class="heading">2020<br/>($M)</td>
+                    <td class="heading sep-column">2020 %<br/>of total</td>
+
+                    <td class="heading">2015<br/>($M)</td>
+                    <td class="heading">2020<br/>($M)</td>
+                    <td class="heading sep-column">2020 %<br/>of total</td>
+
+                </tr>
+
+                <tr data-ng-repeat-start="customer in custLvl.customerDetails.custTransactions track by $index">
+                    <td class="cust-name" 
+                        data-ng-bind-html="customer.SCM_Customer__r.Name | trustHtmlInText">
+                     </td>
+                    
+                    <td data-ng-class="{'cust-other': customer.Other_Customer__c}">
+                        
+                        <i  class="glyphicon glyphicon-ok" 
+                            data-ng-if="customer.Other_Customer__c"></i>
+                        
+                    </td>
+                    
+                    <td>{{ customer.FMCG_Actual__c | formatNumber }}</td>
+                    <td>{{ customer.FMCG_Forecast__c | formatNumber }}</td>
+                    <td>{{ customer.Overall_Actual__c  | formatNumber }}</td>
+                    <td>{{ customer.Overall_Forecast__c | formatNumber }}</td>
+                    <td>{{ customer.Overall_Total__c  }}</td>
+                    <td>{{ customer.Mars_Actual__c | formatNumber }}</td>
+                    <td>{{ customer.Mars_Forecast__c | formatNumber}}</td>
+                    <td>{{ customer.Mars_Total__c }}</td>
+                    <td>{{ customer.Contribution_Actual__c | formatNumber}}</td>
+                    <td>{{ customer.Contribution_Forecast__c | formatNumber}}</td>
+                    <td>{{ customer.Contribution_Total__c }}</td>
+                    <td>{{ customer.Other__c | formatNumber}}</td>
+                    <td>{{ customer.Trade__c | formatNumber}}</td>
+                    <td>{{ customer.SCM_Customer_Strategic_Adjust__r.Name }}</td>
+                    <td class="channel-edit">
+                        <span data-ng-click="custLvl.editCustModal(customer.Id)">
+                            Update Channel
+                          </span>
+                    </td>
+                </tr>
+
+                <tr data-ng-repeat-end="">
+
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td>{{custLvl.customerDetails.totalsales.FMCGActual | formatNumber}}</td>
+                    <td>{{custLvl.customerDetails.totalsales.FMCGForecast | formatNumber}}</td>
+                    <td>{{custLvl.customerDetails.totalsales.overallActual | formatNumber}}</td>
+                    <td>{{custLvl.customerDetails.totalsales.overallForecast | formatNumber}}</td>
+                    <td data-ng-bind="custLvl.customerDetails.totalsales.overallForecast === 0 ? '0%': '100%'"></td>
+                    <td>{{custLvl.customerDetails.totalsales.MarsSalesActual | formatNumber}}</td>
+                    <td>{{custLvl.customerDetails.totalsales.MarsSalesForecast | formatNumber}}</td>
+                    <td data-ng-bind="custLvl.customerDetails.totalsales.MarsSalesForecast === 0 ? '0%': '100%'"></td>
+                    <td>{{custLvl.customerDetails.totalsales.MarsContriActual | formatNumber}}</td>
+                    <td>{{custLvl.customerDetails.totalsales.MarsContriForecast | formatNumber}}</td>
+                    <td data-ng-bind="custLvl.customerDetails.totalsales.MarsContriForecast === 0 ? '0%': '100%'"></td>
+                    <td>{{custLvl.customerDetails.totalsales.Other | formatNumber}}</td>
+                    <td>{{custLvl.customerDetails.totalsales.Trade | formatNumber}}</td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

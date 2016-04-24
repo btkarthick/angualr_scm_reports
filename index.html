@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SCM :: Solutions </title>
+    <link rel="stylesheet" href="css/custom-bootstrap.css" />
+    <link rel="stylesheet" href="css/global.css" />
+
+</head>
+
+<body data-ng-app="app.scm">
+
+    <div class="main-container">
+
+        <!--Dummy navigation - To simulate Sales Force Navigation-->
+
+        <!--Navigation starts-->
+
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/home">
+                    Channel Forecasting Test
+                </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+
+                        <li>
+                            <a href="#/forecasts">
+                            Channel Forecasting
+                        </a>
+                        </li>
+
+                        <li>
+                            <a href="#/customers"> Customer Prioritization</a>
+                        </li>
+
+                        <!--<li>
+                            <a href="#">Sub Channel</a>
+                        </li>-->
+                    </ul>
+
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!--End of navigation-->
+
+
+        <!--End of dummy naigation-->
+
+        <!--Start of the main wrapper - goes into Sales Force-->
+        <div class="scm-main-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        
+                        <data-ui-view></data-ui-view>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--End of the Main Wrapper-->
+
+        <toaster-container></toaster-container>
+        
+               
+
+    </div>
+
+    <!--injecting:vendors-->
+    <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+    </script>-->
+
+
+    <script src="scripts/lodash.custom.min.js"></script>
+    <script src="scripts/angular.v1.5.3.min.js"></script>
+    <script src="scripts/angular-ui-router.v0.2.18.min.js"></script>
+    <script src="scripts/angular-animate.v1.5.3.min.js"></script>
+    <script src="scripts/angular-sanitize.v1.5.3.min.js"></script>
+    <script src="scripts/angular-messages.v1.5.3.min.js"></script>
+    <script src="scripts/angular-dragdrop.min.js"></script>
+    <script src="scripts/ui-bootstrap-custom-tpls-1.2.5.min.js"></script>
+    <script src="scripts/angular.toaster.v1.2.1.min.js"></script>
+
+    <script src="scripts/angular.ngforce.js"></script>
+
+    <script src="local/local-ng-force.config.js"></script>
+
+
+    <script src="scripts/ngforce.sf.template.js"></script>
+    <!--<script src="scripts/ngforce.visualforce.remoting.js"></script>-->
+
+
+
+    <!--inject: scm templates-->
+    <script src="scmapp/app-scm.config.js"></script>
+    <script src="scmapp/templates.js"></script>
+
+    <!--inject:module-->
+    <script src="scmapp/app-scm.module.js"></script>
+
+    <!--inject:controller-->
+    <script src="scmapp/forecasts/fmcg-channel/fmcg-listing.controller.js"></script>
+
+    <script src="scmapp/forecasts/category-channel/category-listing.controller.js"></script>
+    <script src="scmapp/forecasts/category-channel/category-update.controller.js"></script>
+    <script src="scmapp/forecasts/sub-channel/sub-channel.controller.js"></script>
+    <script src="scmapp/forecasts/sub-channel/sub-channel-update.controller.js"></script>
+    <script src="scmapp/forecasts/channel-insights/insights.controller.js"></script>
+    
+    <script src="scmapp/customers/customer-level/customer-listing.controller.js"></script>
+    <script src="scmapp/customers/customer-level/customer-add.controller.js"></script>
+    <script src="scmapp/customers/customer-insights/cust-insight.controller.js"></script>
+    <script src="scmapp/customers/customers-resources/resources-planning.controller.js"></script>
+    <script src="scmapp/customers/customers-resources/faqs.controller.js"></script>
+    
+
+    <!--inject:local services -->
+    <script src="local/services/fmcg.service.js"></script>
+    <script src="local/services/category.service.js"></script>
+    <script src="local/services/sub-channel.service.js"></script>
+    <script src="local/services/insights-chart.service.js"></script>
+    <script src="local/services/customer.service.js"></script>
+    <script src="local/services/cust-profit.service.js"></script>
+    <script src="local/services/customers-resources.service.js"></script>
+    
+    
+    <!--end of local inject of services-->
+
+    <script src="scmapp/forecasts/channel-insights/resource-spend.service.js"></script>
+    <script src="scmapp/forecasts/channel-insights/market-position.service.js"></script>
+
+    <!--inject:directive-->
+    <script src="scmapp/forecasts/channel-insights/insights-market.directive.js"></script>
+    <script src="scmapp/forecasts/channel-insights/insights-resource.directive.js"></script>
+    <script src="scmapp/customers/customer-insights/insights-profitVsGrowth.directive.js"></script>
+
+    <!--inject:filter-->
+    <script src="scmapp/common/scm.allfilters.js"></script>
+
+
+
+</body>
+
+</html>

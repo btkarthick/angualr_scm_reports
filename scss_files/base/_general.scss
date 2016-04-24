@@ -1,0 +1,166 @@
+
+// ********************************************************************************//
+// ******  All general styles goes here ******************//
+// ********************************************************************************//
+
+
+body{
+	
+		background-color: #FFFFFF;
+		font-family: Arial,Helvetica,sans-serif;
+        
+	}
+
+a{
+	text-decoration: none;
+	
+		
+	&:hover , &:active , &:focus{
+		outline: 0;	text-decoration:none;
+	}
+	
+	img{border: none;}
+	
+	 
+}
+
+
+
+
+.hide{display: none;}
+
+.padTop15{
+	
+	padding-top: 15px;
+}
+
+
+.clearfix{
+	
+	@include clearfix();
+}
+
+.scmBtn{
+    
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+  @include user-select(none);
+  
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @include tab-focus;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+}
+
+// ***** Override some of the default bootstrap's Form control styles ****//
+
+
+
+// *** End of overriding ***/
+
+.scm{
+	
+
+	&-main-wrapper{
+		
+		background-color: #FFFFFF;
+		font-family: $wrapper-font-family;
+        font-size: $wrapper-font-size;
+        margin: 0 auto;
+        color: $wrapper-color;
+		
+        h4{
+            color: $wrapper-color;
+            display: block;
+            padding-top: 15px;
+        }
+	}
+	&-table{
+        
+        margin-top: 10px;
+                
+        tr > td{
+            
+            vertical-align: middle !important;   
+           // padding: 10px !important;
+            color: $tab-color;
+           // width: 10px;      
+            
+        }
+        .sep-column{
+            border-right: 1px solid #3AB3E4;
+        }
+        .heading{
+            
+            background-color: $table-heading-bg;        
+            
+        }
+        
+    }
+    
+    &-pad16{
+        
+        padding: 16px !important;
+    }
+    
+   &-tempText{ 
+       
+            background: grey none repeat scroll 0 0;
+            color: #fff;
+            padding: 5px 10px;
+            width: 70px;
+            margin-right: 10px;
+            margin-top: 10px;
+            float: right;
+       
+   }
+   
+   &-downloadBtn{
+            
+            background-color: #0295c3;
+            // background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 12px);
+            // box-shadow: 3px 0 5px -3px #999, -3px 0 5px -3px #999;
+             @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+             @include user-select(none);
+            cursor:pointer;
+            
+            span{
+                
+                display: block;
+                background-image: url('../images/cut-icon.png');
+                width: 40px;
+                height: 20px;
+                text-indent: -9999px;
+            }
+            
+   } 
+}
+
+.chart-canvas{
+    display: none;
+}
+
+.dl-anchor{
+    @extend .chart-canvas;
+    text-indent: 9999;
+}
