@@ -21,6 +21,7 @@
            { 
               float: right;
               margin-top: 28px;
+              margin-right: 20px;
             }
            
            @include clearfix();
@@ -28,22 +29,22 @@
        
       &-content{
           
-          width: 1200px;
+          width: $br-output-wrapper-width;
           margin: 0 auto;
           border: 1px solid #000000;
-          margin-top: 25px;
+          margin-top: 30px;
+          
           
           &-left{
               
               float: left;
-              width: 400px;
+              width: $br-output-small-width;
               border-right: 1px solid #000000;
-              height: 100px;
           }
           
           &-right{
              float: left;
-             width: 798px;
+             width: $br-output-large-last;
           }
           
           &-header{
@@ -58,12 +59,82 @@
                 width: 100%;
           }
           
+          &-inner{
+              
+            padding-left: 6px;
+            padding-right: 10px;
+            padding-top: 0;
+            padding-bottom: 8px;
+          }
+          
+          &-qsnnippet{
+            
+            color: #252525;
+            padding-top: 8px;
+            
+                span{
+                    
+                    float: left;
+                    display: block;
+                    &:first-child{
+                        font-size: 12px;
+                    }
+                    
+                    &:last-child{
+                        
+                        font-weight: bold;
+                        font-size: 13px;
+                        margin-left: 5px;
+                        width: 330px;
+                        &.nowrap{
+                            width: auto;
+                        }
+                    }
+                }
+                
+                .answer{ 
+                    
+                    padding-top: 5px;
+                    padding-left: 15px;
+                    line-height: 19px;
+                    font-size: 12px;    
+                 }
+          }
+          
       }
       
       &-top{
           
           width: 100%;
+          border-bottom: 1px solid #000000;
           @include clearfix();
+      }
+      
+      &-middle{
+          
+          width: 100%;
+          border-bottom: 1px solid #000000;
+          @include clearfix();
+      }
+      
+      &-bottom{
+          
+          width: 100%;
+          padding-bottom: 10px;
+          @include clearfix();
+          
+          section{
+              
+              float: left;
+              padding-left: 6px;
+              width: $br-output-small-width;
+              
+              
+              &:last-child{
+                  
+                  width: ($br-output-small-width - 5);
+              }
+          }
       }
       
     

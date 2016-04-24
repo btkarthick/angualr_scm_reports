@@ -1,6 +1,14 @@
 <div class="res-wrapper">
 
-    <h4>Resource Planning</h4>
+    <div class="res-head">
+
+        <h4>Resource Planning</h4>
+
+        <div class="scm-downloadBtn">
+            <span> Download Output </span>
+        </div>
+
+    </div>
 
     <div class="row" data-ng-if="res.resourcesList.nonAdjustedItemCount > 0">
         <div class="col-xs-8 col-xs-offset-2 res-wraning">
@@ -14,7 +22,7 @@
     </div>
 
 
-    <div class="table-responsive">
+    <div class="table-responsive resMarTop">
         <table class="table table-bordered text-center scm-table">
 
             <tbody>
@@ -49,9 +57,9 @@
                                 <td class="channel__cells" data-ng-bind="emerging.totalpercent"></td>
                             </tr>
 
-                          <!--Dummy rows to make the display consistent      -->
+                            <!--Dummy rows to make the display consistent      -->
                             <tr data-ng-repeat="n in res.emergingDummyRows track by $index">
-                                
+
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
@@ -61,7 +69,7 @@
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
 
                             </tr>
-                           <!--End of dummy rows -->
+                            <!--End of dummy rows -->
 
                             <tr class="res-total">
                                 <td>TOTAL</td>
@@ -99,10 +107,10 @@
                                 <td class="channel__cells" data-ng-bind="partners.total"></td>
                                 <td class="channel__cells" data-ng-bind="partners.totalpercent"></td>
                             </tr>
-                            
+
                             <!--Dummy rows to make the display consistent      -->
                             <tr data-ng-repeat="n in res.partnerDummyRows track by $index">
-                                
+
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
@@ -112,7 +120,7 @@
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
 
                             </tr>
-                           <!--End of dummy rows -->
+                            <!--End of dummy rows -->
 
                             <tr class="res-total">
                                 <td>TOTAL</td>
@@ -154,7 +162,7 @@
                             </tr>
 
                             <tr data-ng-repeat="niche in res.resourcesList.nichePlayers.actuals track by $index">
-                                <td class="channel__cells"  data-ng-bind="niche.customer"></td>
+                                <td class="channel__cells" data-ng-bind="niche.customer"></td>
                                 <td class="channel__cells" data-ng-bind="niche.rsvActual"></td>
                                 <td class="channel__cells" data-ng-bind="niche.rsvForecast"></td>
                                 <td class="channel__cells" data-ng-bind="niche.trade"></td>
@@ -162,10 +170,10 @@
                                 <td class="channel__cells" data-ng-bind="niche.total"></td>
                                 <td class="channel__cells" data-ng-bind="niche.totalpercent"></td>
                             </tr>
-                            
+
                             <!--Dummy rows to make the display consistent      -->
                             <tr data-ng-repeat="n in res.nicheDummyRows track by $index">
-                                
+
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
@@ -175,7 +183,7 @@
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
 
                             </tr>
-                           <!--End of dummy rows -->
+                            <!--End of dummy rows -->
 
                             <tr class="res-total">
                                 <td>TOTAL</td>
@@ -205,18 +213,18 @@
                             </tr>
 
                             <tr data-ng-repeat="scale in res.resourcesList.scale.actuals track by $index">
-                                <td class="channel__cells"  data-ng-bind="scale.customer"></td>
-                                <td class="channel__cells"  data-ng-bind="scale.rsvActual"></td>
-                                <td class="channel__cells"  data-ng-bind="scale.rsvForecast"></td>
-                                <td class="channel__cells"  data-ng-bind="scale.trade"></td>
-                                <td class="channel__cells"  data-ng-bind="scale.other"></td>
-                                <td class="channel__cells"  data-ng-bind="scale.total"></td>
-                                <td class="channel__cells"  data-ng-bind="scale.totalpercent"></td>
+                                <td class="channel__cells" data-ng-bind="scale.customer"></td>
+                                <td class="channel__cells" data-ng-bind="scale.rsvActual"></td>
+                                <td class="channel__cells" data-ng-bind="scale.rsvForecast"></td>
+                                <td class="channel__cells" data-ng-bind="scale.trade"></td>
+                                <td class="channel__cells" data-ng-bind="scale.other"></td>
+                                <td class="channel__cells" data-ng-bind="scale.total"></td>
+                                <td class="channel__cells" data-ng-bind="scale.totalpercent"></td>
                             </tr>
-                            
+
                             <!--Dummy rows to make the display consistent      -->
                             <tr data-ng-repeat="n in res.scaleDummyRows track by $index">
-                                
+
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
@@ -226,7 +234,7 @@
                                 <td class="res-empty-cells"> <span> 0 </span> </td>
 
                             </tr>
-                           <!--End of dummy rows -->
+                            <!--End of dummy rows -->
 
                             <tr class="res-total">
                                 <td>TOTAL</td>
@@ -266,8 +274,8 @@
                             </tr>
 
                             <tr>
-                                <td class="channel__cells" > Total Other </td>
-                                <td class="channel__cells"  data-ng-bind="res.resourcesList.otherCustomers.total.rsvActual"></td>
+                                <td class="channel__cells"> Total Other </td>
+                                <td class="channel__cells" data-ng-bind="res.resourcesList.otherCustomers.total.rsvActual"></td>
                                 <td class="channel__cells" data-ng-bind="res.resourcesList.otherCustomers.total.rsvForecast"></td>
                                 <td class="channel__cells" data-ng-bind="res.resourcesList.otherCustomers.total.trade"></td>
                                 <td class="channel__cells" data-ng-bind="res.resourcesList.otherCustomers.total.other"></td>

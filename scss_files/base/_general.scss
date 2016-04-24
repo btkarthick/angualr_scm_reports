@@ -137,23 +137,13 @@ a{
    
    &-downloadBtn{
             
-            background-color: #0295c3;
-            // background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 12px);
-            // box-shadow: 3px 0 5px -3px #999, -3px 0 5px -3px #999;
-             @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
-             @include user-select(none);
+            display: block;
+            background-image: url('../images/cut-btn.png');
+            width: 65px;
+            height: 32px;
+            text-indent: -9999px;
             cursor:pointer;
-            
-            span{
-                
-                display: block;
-                background-image: url('../images/cut-icon.png');
-                width: 40px;
-                height: 20px;
-                text-indent: -9999px;
-            }
-            
-   } 
+      } 
 }
 
 .chart-canvas{

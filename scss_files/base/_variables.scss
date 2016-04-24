@@ -22,7 +22,11 @@ $tab-color: #ffffff;
 $wrapper-font-family: Arial,Helvetica,sans-serif;
 
 
-
 //Font-sizes 
-
 $wrapper-font-size: 13px;
+
+//Bold Resources Variables //
+$br-output-wrapper-width : 1080px;
+$br-output-small-width : ($br-output-wrapper-width / 3);
+$br-output-large-width : ($br-output-small-width * 2);
+$br-output-large-last : ($br-output-large-width - 2);

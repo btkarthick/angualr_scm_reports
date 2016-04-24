@@ -215,8 +215,7 @@ gulp.task('build', function () {
     runSequence(
                     'styles', 
                     'clean', 
-                    'ng:tempcache', 
-                    ['combineJS:vendors', 'combineJS:app', 'combineJS:jQuery'], 
+                    ['ng:tempcache', 'combineJS:vendors', 'combineJS:app', 'combineJS:jQuery'], 
                     'copy:tosf', 
                     'zip:resource'
                 );
