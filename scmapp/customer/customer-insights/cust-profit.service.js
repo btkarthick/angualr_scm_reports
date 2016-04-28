@@ -55,7 +55,7 @@
         };
 
         var setSizeAxis = function (chartData) {
-            console.log(chartData);
+
             var getValBy = 'Mars_Category_Sales_By_Customer';
             var minVal = (_.minBy(chartData, getValBy))[getValBy];
             var maxVal = (_.maxBy(chartData, getValBy))[getValBy];

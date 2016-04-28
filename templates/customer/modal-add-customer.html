@@ -24,15 +24,21 @@
                 <div ng-messages="addCustomerForm.$error" class="error" role="alert">
                     <div ng-message="customer">Please select a customer</div>
                 </div>
+                
                 <div>
                     <label for="">Mark As Other</label>
                     <input data-ng-disabled="addCust.disableOtherCheck" class="" data-ng-model="addCust.custEntities.Other_Customer__c" type="checkbox" />
                 </div>
+                
+                <div class="cust-help-text">
+                    <span>Note: </span>Please <a target="_blank" href="http://salesforcesupport.mars/ReportIssue.aspx">click here</a> if customer record not found.
+                </div>
+                
             </div>
             <div class="form-group col-xs-4">
                 <h5 class="text-center">Total FMCG Sales</h5>
 
-                <label for="">2015A ($M)</label>
+                <label for="">2015A ($m)</label>
                 <input type="text" class="form-control" name="FMCG_Actual__c" 
                 data-ng-change="addCust.validate(addCust.custEntities.FMCG_Actual__c,'FMCG_Actual__c')" data-ng-model="addCust.custEntities.FMCG_Actual__c" id="">
                 
@@ -40,7 +46,7 @@
                     <div ng-message="FMCG_Actual__c">Please enter a valid number</div>
                 </div>
                 
-                <label for="">2020 ($M)</label>
+                <label for="">2020 ($m)</label>
                 <input type="text" class="form-control" name="FMCG_Forecast__c" 
                 data-ng-change="addCust.validate(addCust.custEntities.FMCG_Forecast__c,'FMCG_Forecast__c')" data-ng-model="addCust.custEntities.FMCG_Forecast__c" id="" >
                 
@@ -52,7 +58,7 @@
             </div>
             <div class="form-group col-xs-4">
                 <h5 class="text-center">Overall Category Sales by Customer (RSV)</h5>
-                <label for="">2015A ($M)</label>
+                <label for="">2015A ($m)</label>
                 <input type="text" class="form-control" data-ng-required="true" data-ng-change="addCust.validate(addCust.custEntities.Overall_Actual__c,'Overall_Actual__c')" 
                 name="Overall_Actual__c" data-ng-model="addCust.custEntities.Overall_Actual__c" id="">
                 
@@ -64,7 +70,7 @@
                     <div ng-message="Overall_Actual__c">Please enter a valid number</div>
                 </div>
                 
-                <label for="">2020 ($M)</label>
+                <label for="">2020 ($m)</label>
                 <input type="text" class="form-control" data-ng-required="true" 
                 data-ng-change="addCust.validate(addCust.custEntities.Overall_Forecast__c,'Overall_Forecast__c');
                 addCust.calPercentTotal('overallForecast', 'Overall_Total__c' ,addCust.custEntities.Overall_Forecast__c)" 
@@ -85,7 +91,7 @@
             </div>
             <div class="form-group col-xs-4">
                 <h5 class="text-center">Mars Category Sales by Customer (RSV)</h5>
-                <label for="">2015A ($M)</label>
+                <label for="">2015A ($m)</label>
                 <input type="text" class="form-control" data-ng-required="true" data-ng-change="addCust.validate(addCust.custEntities.Mars_Actual__c,'Mars_Actual__c')"
                 name="Mars_Actual__c" data-ng-model="addCust.custEntities.Mars_Actual__c" id="">
                 
@@ -97,7 +103,7 @@
                     <div ng-message="Mars_Actual__c">Please enter a valid number</div>
                 </div>
                 
-                <label for="">2020 ($M)</label>
+                <label for="">2020 ($m)</label>
                 <input type="text" class="form-control" data-ng-required="true" 
                 data-ng-change="addCust.validate(addCust.custEntities.Mars_Forecast__c,'Mars_Forecast__c');
                 addCust.calPercentTotal('MarsSalesForecast','Mars_Total__c',addCust.custEntities.Mars_Forecast__c)"
@@ -119,7 +125,7 @@
             <div class="form-group col-xs-4">
                 <h5 class="text-center">{{ contributionName }}</h5>
                 
-                <label for="">2015A ($M)</label>
+                <label for="">2015A ($m)</label>
                 <input type="text" class="form-control" data-ng-required="true" data-ng-change="addCust.validate(addCust.custEntities.Contribution_Actual__c,'Contribution_Actual__c')" 
                 name="Contribution_Actual__c" data-ng-model="addCust.custEntities.Contribution_Actual__c" id="">
                 
@@ -131,7 +137,7 @@
                     <div ng-message="Contribution_Actual__c">Please enter a valid number</div>
                 </div>
                 
-                <label for="">2020 ($M)</label>
+                <label for="">2020 ($m)</label>
                 <input type="text" class="form-control" 
                 data-ng-required="true" 
                 data-ng-change="addCust.validate(addCust.custEntities.Contribution_Forecast__c,'Contribution_Forecast__c');
@@ -154,8 +160,8 @@
             </div>
             
             <div class="form-group col-xs-4">
-                <h5 class="text-center">Misc</h5>
-                <label for="">Other ($M)</label>
+                <h5 class="text-center">Total Resources</h5>
+                <label for="">Other ($m)</label>
                 <input type="text" class="form-control" name="Other__c" data-ng-model="addCust.custEntities.Other__c"
                 data-ng-change="addCust.validate(addCust.custEntities.Other__c,'Other__c')" 
                 id="">
@@ -165,7 +171,7 @@
                 </div>
                 
                 
-                <label for="">Trade ($M)</label>
+                <label for="">Trade ($m)</label>
                 <input type="text" class="form-control"name="Trade__c" data-ng-model="addCust.custEntities.Trade__c"
                 data-ng-change="addCust.validate(addCust.custEntities.Trade__c,'Trade__c')" 
                 id="" >

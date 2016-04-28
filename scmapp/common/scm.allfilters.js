@@ -23,6 +23,20 @@
 
     };
 
+    var setReplaceNewLine = function ($sce) {
+
+        return function (textVal) {
+
+            if (angular.isDefined(textVal)) {
+
+                textVal = textVal.replace(/\r?\n/g, '<br/>');
+
+                return $sce.trustAsHtml(textVal);
+            }
+        };
+
+    };
+
     /**
      * A filter to format number in Western Notation
      * (eg) 12134567.9876 will be 12,134,567.9876
@@ -80,9 +94,9 @@
         return function (rawContriData) {
 
             var contriData = [];
-            
+
             _.forEach(rawContriData, function (contr) {
-                
+
                 var contrName = _.lowerCase(contr.Name);
                 if (contrName === 'contribution')
                     contriData[0] = contr;
@@ -90,15 +104,15 @@
                     contriData[1] = contr;
                 else if (contrName === 'nsv')
                     contriData[2] = contr;
-                    
+
             });
             return contriData;
         }
     };
-    
-    
-    
-    
+
+
+
+
 
     angular
         .module('scm.filters', [])
@@ -106,10 +120,11 @@
         .filter('formatNumber', setFormatNumber)
         .filter('replaceZero', replaceZeroWithEmptyString)
         .filter('capitalizeIt', setCapitalizeIt)
-        .filter('sortContribution', setSortContribution);
+        .filter('sortContribution', setSortContribution)
+        .filter('replaceNewLine', setReplaceNewLine);
 
 
 
     setTrustInput.$inject = ['$sce'];
-
+    setReplaceNewLine.$inject = ['$sce'];
 })();

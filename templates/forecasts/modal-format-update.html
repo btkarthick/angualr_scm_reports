@@ -6,9 +6,9 @@
 
     <h3 class="modal-title">
          
-         <span  data-ng-bind="editchanl.modalData.channelName | capitalizeIt"></span>
+         <span  data-ng-bind="editchanl.modalData.channelName"></span>
          <span data-ng-if="editchanl.modalData.hasFormat">
-             - {{editchanl.modalData.formatName | capitalizeIt }}
+             - {{editchanl.modalData.formatName }}
          </span>
     </h3>
 </div>
@@ -19,7 +19,7 @@
             <div class="form-group col-xs-12 center-block">
 
                 <h5 class="text-center">Mars Resources by Channel</h5>
-                <label for="">Total spend 2015A ($M)</label>
+                <label for="">Total spend 2015A ($m)</label>
                 <input type="text" 
                 class="form-control" 
                 name="Total_Spend" 
@@ -35,7 +35,7 @@
 
 
 
-                <label for="">Trade spend 2015A ($M)</label>
+                <label for="">Trade spend 2015A ($m)</label>
                 <input type="text" 
                 class="form-control" 
                 name="Trade_Spend" 
@@ -46,7 +46,7 @@
                     <div ng-message="Trade_Spend">Please enter a valid number</div>
                 </div>
 
-                <label for="">Consumer Promotion Spend 2015A ($M)</label>
+                <label for="">Consumer Promotion Spend 2015A ($m)</label>
                 <input type="text" 
                 class="form-control" 
                 name="Promotion_Spend" 
@@ -57,7 +57,7 @@
                     <div ng-message="Promotion_Spend">Please enter a valid number</div>
                 </div>
 
-                <label for="">D&E 2015A ($M)</label>
+                <label for="">D&E 2015A ($m)</label>
                 <input type="text" 
                 class="form-control" 
                 name="DE_Spend" 
@@ -68,7 +68,7 @@
                     <div ng-message="DE_Spend">Please enter a valid number</div>
                 </div>
 
-                <label for="">Overhead 2015A ($M)</label>
+                <label for="">Overhead 2015A ($m)</label>
                 <input type="text" class="form-control" 
                 name="OverHead_Spend" 
                 data-ng-change="editchanl.validate(editchanl.format.Mars_Overhead__c,'OverHead_Spend')"

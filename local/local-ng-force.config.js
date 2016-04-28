@@ -11,7 +11,9 @@
     angular.module('ngForce.config', []).constant('ngForceConfig', {
         sessionId: 'AFDFDFD!3213232323DFDFWEQWRF',
         sitePrefix: sitePrefix,
-        resourceUrl: '.'
+        resourceUrl: '.',
+        unitCountry : 'UK',
+        unitSegment : 'PET'
     });
 
 })(angular);

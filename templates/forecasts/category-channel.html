@@ -16,74 +16,54 @@
                 </tr>
 
                 <tr>
-                    <!--<td class="heading" 
-                        data-ng-repeat="column in chcat.categoryForecastList.columns track by $index" 
-                        data-ng-class="{ 'sep-column' : ( ($index + 1) % 5 === 0) }"  
-                        data-ng-bind="column"></td>-->
-                    <td class="heading">2015A<br/>($M)</td>
-                    <td class="heading">2020F<br/>($M) </td>
-                    <td class="heading">CAGR<br/>(12-15)</td>
-                    <td class="heading">CAGR<br/>(15-20)</td>
+
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Forecast Sales">2020F<br/>($m) </td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Cumulative Annual Growth Rate">CAGR<br/>(12-15)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Cumulative Annual Growth Rate">CAGR<br/>(15-20)</td>
                     <td class="heading sep-column">2020 %<br/>of total</td>
-                    <td class="heading">2015A<br/>($M)</td>
-                    <td class="heading">2020F<br/>($M)</td>
-                    <td class="heading">CAGR<br/>(12-15)</td>
-                    <td class="heading">CAGR<br/>(15-20)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Forecast Sales">2020F<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Cumulative Annual Growth Rate">CAGR<br/>(12-15)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Cumulative Annual Growth Rate">CAGR<br/>(15-20)</td>
                     <td class="heading sep-column">2020 %<br/> of total</td>
-                    <td class="heading">2015A<br/>(%)</td>
-                    <td class="heading">2020F<br/>(%)</td>
-                    <td class="heading">PP<br/>change<br/>(15-20)</td>
-                    
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>(%)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Forecast Sales">2020F<br/>(%)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Percentage Point Change">PP<br/>change<br/>(15-20)</td>
+
                 </tr>
 
                 <tr data-ng-repeat-start="channel in chcat.categoryForecastList.forecasts track by $index">
 
-                    <td data-ng-if="channel.hasFormat" 
-                        rowspan="{{ channel.format.length + 1 }}" 
-                        class="{{ channel.className }}" 
-                        data-ng-bind-html="channel.channelName | trustHtmlInText">
+                    <td data-ng-if="channel.hasFormat" rowspan="{{ channel.format.length + 1 }}" class="{{ channel.className }}" data-ng-bind-html="channel.channelName | trustHtmlInText">
                     </td>
-                 </tr>
-                 
-                 <tr data-ng-repeat-end 
-                    data-ng-repeat-start="format in channel.format track by $index" 
-                    data-ng-init="offset = $index">       
-                        
-                     <td data-ng-if="channel.hasFormat" 
-                         class="{{ format.className }}" 
-                         data-ng-bind-html="format.formatName | trustHtmlInText">
-                     </td>
-                     
-                     <td data-ng-if="!channel.hasFormat" 
-                         colspan="2" 
-                         class="{{ channel.className }}" 
-                         data-ng-bind-html="channel.channelName | trustHtmlInText"> 
-                      </td>
-                         
-                      <td data-ng-repeat-end 
-                          class="channel__cells" 
-                          data-ng-if="format.sales.length > 0" 
-                          data-ng-class="{ 'sep-column' : ( ($index + 1) % 5 === 0) }" 
-                          data-ng-repeat="sval in format.sales track by $index" 
-                          data-ng-bind="sval | replaceZero | formatNumber">
-                      </td>
-                      
-                      <td  data-ng-repeat-end 
-                           data-ng-if="format.sales.length === 0"
-                           data-ng-class="{ 'sep-column' : ( ($index + 1) % 5 === 0) }"  
-                           data-ng-repeat="n in chcat.generateArray() track by $index" 
-                           data-ng-bind="''"></td>
-                      
-                      <td class="channel-edit">
-                          <span data-ng-click="chcat.setUpdateCat(channel,offset )">
+                </tr>
+
+                <tr data-ng-repeat-end data-ng-repeat-start="format in channel.format track by $index" data-ng-init="offset = $index">
+
+                    <td data-ng-if="channel.hasFormat" class="{{ format.className }}" data-ng-bind-html="format.formatName | trustHtmlInText">
+                    </td>
+
+                    <td data-ng-if="!channel.hasFormat" colspan="2" class="{{ channel.className }}" data-ng-bind-html="channel.channelName | trustHtmlInText">
+                    </td>
+
+                    <td data-ng-repeat-end class="channel__cells" data-ng-if="format.sales.length > 0" data-ng-class="{ 'sep-column' : ( ($index + 1) % 5 === 0) }"
+                        data-ng-repeat="sval in format.sales track by $index" data-ng-bind="sval | replaceZero | formatNumber">
+                    </td>
+
+                    <td data-ng-repeat-end data-ng-if="format.sales.length === 0" data-ng-class="{ 'sep-column' : ( ($index + 1) % 5 === 0) }"
+                        data-ng-repeat="n in chcat.generateArray() track by $index" data-ng-bind="''"></td>
+
+                    <td class="channel-edit">
+                        <span data-ng-click="chcat.setUpdateCat(channel,offset )">
                             Update Channel
-                          </span>   
-                     </td>      
+                          </span>
+                    </td>
 
                 </tr>
-                
+
                 <tr data-ng-repeat-end></tr>
-                
+
                 <tr class="channel__total">
                     <td colspan="2">Total</td>
                     <td data-ng-bind="chcat.categoryForecastList.totalsales.overall[0] | formatNumber"></td>
@@ -96,12 +76,18 @@
                     <td class="sep-column">100%</td>
                     <td colspan="3"></td>
                 </tr>
-                
-                
-                
+
+
+
             </tbody>
 
         </table>
+    </div>
+    
+    <div class="scm-bottom-ctrls">
+        <div class="bottom-legends">
+            FY 2015 and 2020 forecasts
+        </div>
     </div>
 
 </div>

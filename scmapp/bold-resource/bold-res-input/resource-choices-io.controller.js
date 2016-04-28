@@ -11,7 +11,7 @@
 
     'use strict';
 
-    var setResourceIOController = function ($scope, resInpserv, HelperService) {
+    var setResourceIOController = function ($scope,$timeout, resInpserv, HelperService) {
 
         var vm = this;
 
@@ -20,6 +20,16 @@
         var qnPriorities = [];
 
         vm.qn = {};
+        
+        vm.maxlenShort = 140;
+        
+        vm.maxlenLong = 240;
+        
+        vm.showAlert = false;
+        
+        var callAtTimeout = function(){
+              vm.showAlert = false;
+        };
 
         vm.submitFaqForm = function () {
 
@@ -34,15 +44,14 @@
                     questions = response;
                     questions = setAnswerModel(questions);
                     vm.qn = angular.copy(questions);
-                    alert('Data Saved!');
+                    vm.showAlert = true;
+                    $timeout(callAtTimeout, 2000);
                 }
 
             );
         };
 
         vm.resetForm = function () {
-            
-            console.log(questions);
             
             vm.qn = angular.copy(questions);
             $scope.faqForm.$setPristine();
@@ -56,6 +65,7 @@
             resInpserv.getQuesEntities().then(
                 function (response) {
                     questions = response;
+                    console.log(response);
                     questions = setAnswerModel(questions);
                     vm.qn = angular.copy(questions);
                 }
@@ -69,7 +79,7 @@
 
             _.forEach(qnPriorities, function (priority) {
 
-                extractedAnswers.push(_.map(vm.qn[priority], 'SCM_Answers__r'));
+               extractedAnswers.push(_.map(vm.qn[priority], 'SCM_Answers__r'));
 
             });
 
@@ -83,7 +93,8 @@
 
 
                 if (angular.isUndefined(question.SCM_Answers__r)) {
-
+                    console.log(questions[priority][offset]);
+                    questions[priority][offset].SCM_Answers__r = [];
                     questions[priority][offset].SCM_Answers__r.push(HelperService.getChoiceAnswerModel());
                     questions[priority][offset].SCM_Answers__r[0].SCM_Questioner_Txt__c = question.Id;
 
@@ -112,6 +123,6 @@
         .module('scm.bold.resource')
         .controller('ResIoCtrl', setResourceIOController);
 
-    setResourceIOController.$inject = ['$scope', 'resourceInputserv', 'HelperService'];
+    setResourceIOController.$inject = ['$scope','$timeout', 'resourceInputserv', 'HelperService'];
 
 })();

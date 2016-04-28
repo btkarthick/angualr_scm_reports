@@ -7,24 +7,40 @@
         <button class="scmBtn" data-ng-class="{ 'active' : inchart.showResources }" data-ng-click="inchart.setToogleCharts('resource');">
             <a href="">Resources Spend</a>
         </button>
-        <!--<div class="ins-badge">
-            UK Pet
-        </div>-->
-
+        
     </div>
     <div class="ins-charts-wrapper center-block">
         <div id="capture_wrapper">
+            
+            <div  class="ins-badge" 
+                  data-ng-show="inchart.showMarket" 
+                  data-ng-bind="inchart.chartTitle"></div>
+            
             <div data-ng-show="inchart.showMarket" class="ins-print-btn">
                 <a id="save_chart_market"> Crop Chart </a>
             </div>
+           
 
             <div data-ng-show="inchart.showResources" class="ins-print-btn">
                 <a id="save_chart_resource"> Crop Chart </a>
             </div>
+            
+            <p class="ins-charts-header" data-ng-if="inchart.showMarket">
+                How are we positioned vs. the  channel headroom in the market?
+            </p>
+            
+            <p class="ins-charts-header" data-ng-if="inchart.showResources">
+                Are we deploying our resources effectively?
+            </p>
 
             <data-insights-market data-ng-show="inchart.showMarket"></data-insights-market>
 
             <data-insights-resource data-ng-show="inchart.showResources"></data-insights-resource>
+            
+            <aside> Nielsen data MAT 13 Feb 16 vs 2YA </aside>
+            
+            
+            
         </div>
     </div>
 </div>

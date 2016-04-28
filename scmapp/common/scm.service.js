@@ -75,7 +75,7 @@
 
         };
 
-        var setToggleCharts = function (chartContainer, canvasContainer,showCanvas) {
+        var setToggleCharts = function (chartContainer, canvasContainer, showCanvas) {
 
             if (angular.isArray(chartContainer)) {
                 _.forEach(chartContainer, function (container, offset) {
@@ -86,7 +86,7 @@
                 toggleCanvasView(chartContainer, canvasContainer, showCanvas);
         };
 
-        var setSaveChartAsImage = function (chartContainer, canvasContainer, wrapperToCap, imageName, downloadEl) {
+        var setSaveChartAsImage = function (chartContainer, canvasContainer, wrapperToCap, imageName) {
 
             setToggleCharts(chartContainer, canvasContainer, true);
 
@@ -94,9 +94,27 @@
                 {
                     onrendered: function (canvas) {
                         setToggleCharts(chartContainer, canvasContainer, false);
-                        downloadEl.href = canvas.toDataURL("image/png");
-                        downloadEl.download = imageName + '.png';
-                        downloadEl.click();
+                        canvas.toBlob(function (blob) {
+                            saveAs(blob, imageName + '.png');
+                        }, "image/png");
+
+                    }
+
+                }
+            );
+
+        };
+
+        var setSaveHtmlAsImage = function (wrapperToCap, imageName) {
+
+            html2canvas(wrapperToCap,
+                {
+                    onrendered: function (canvas) {
+
+                        canvas.toBlob(function (blob) {
+                            saveAs(blob, imageName + '.png');
+                        }, "image/png");
+
 
                     }
 
@@ -114,19 +132,24 @@
             canvg(canvasEl, svgSnippet);
 
         };
+        
+        
+        var setDecimalRounding = function( value, decimals ){
+            
+            return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+        };
+        
+        
         // Primitive
-
         this.getCustomerEntities = setCustomerEntities;
-
         this.getDefaultStrategy = setDefaultStrategy;
 
         // Functions
-
         this.getChoiceAnswerModel = setChoiceAnswerModel;
-
         this.saveChartAsImage = setSaveChartAsImage;
-
         this.chartSvgToCanvas = chartSvgToCanvas;
+        this.saveHtmlAsImage = setSaveHtmlAsImage;
+        this.decimalRoundTo = setDecimalRounding;
 
 
     }

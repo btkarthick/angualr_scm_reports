@@ -71,7 +71,7 @@
             
             var insFormat =  vfr.send( REMOTECONTROLLER + '.' + 'SubChannelToSave' , {}, false );
             
-            return insFormat( ngForceConfig, objsChannelData ).then(function(response){
+            return insFormat( ngForceConfig.selectedGroupID, objsChannelData ).then(function(response){
                 
                     return (response);
                 

@@ -1,29 +1,53 @@
 // // *************** FAQ styles here **************** // 
 // ************ faq stand for faq *****************// 
 .faq {
+    
     &-form {
         padding: 0 15px 15px;
         margin-bottom: 20px;
-        margin-top: 15px;
+        margin-top: 20px;
         .error{
-            @extend .edit-form-wrapper.error;
-        }         
+            
+            color: #ff0000;
+            font-size: 13px;
+            padding: 4px 5px;
+
+        }       
     }
+    
+    
     &-scale {
         padding: 0 30px;
     }
+    
     &-other {
-        @extend .faq-scale;
+     
+        padding: 0 10px;
+        @include clearfix();
+     
+        &-text{ 
+                    text-align: center;
+                    margin-left: 0px !important; 
+                    margin-right: 0px !important; 
+               }
+        
+        .faq-valid-message{ padding-left: 10px; }       
+        
     }
+    
     &-emerging {
         padding: 0 10px;
     }
+    
     &-partners {
         @extend .faq-emerging;
     }
+    
+    
     &-niche {
         @extend .faq-emerging;
     }
+    
      
     &-buttons {
         margin-top: 20px;
@@ -35,8 +59,20 @@
             margin: 0 5px;
         }
     }
+    
+    
+    &-valid-message{
+         
+        color: #FF0000;
+        font-size: 13px;
+        span{ font-size: 15px; }
+    }
+    
+    
     &-wrapper {
         background-color: #F0F0F0;
+        width: 1200px;
+        margin: 0 auto;
         .btn-reset {
             margin-left: 10px;
             width: 44%;
@@ -54,7 +90,7 @@
             font-weight: bold;
         }
         .form-group {
-            padding-bottom: 25px;
+            padding-bottom: 15px;
             margin-bottom: 0;
             border-right: 1px solid #fff;
             &-last {

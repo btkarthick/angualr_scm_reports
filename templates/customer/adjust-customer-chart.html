@@ -1,0 +1,276 @@
+<div class="cpr-content" data-ng-show="!apc.failureFlag">
+    
+        <div class="cpr-dd-left">
+            <span>My Text</span>
+        </div>
+    
+         <div class="cpr-dload">
+             
+         <div id="capture_wrapper" class="cpr-crop-boundary">    
+
+            <a class="cpr-crop" id="save_chart"> Crop Chart </a>
+            
+            <div class="cpr-dd-middle__title top-left">
+                Emerging Stars
+            </div>
+
+            <div class="cpr-dd-middle__title top-right">
+                Partners
+            </div>
+
+            <div class="cpr-dd-middle__title bot-left">
+                Niche Players
+            </div>
+
+            <div class="cpr-dd-middle__title bot-right">
+                Scale
+            </div>
+
+            <div class="cpr-dd-middle__legLeft">
+                Growth
+            </div>
+            
+            <div class="cpr-dd-middle__headtext">
+                How will our customer prioritization inform our future choices?
+            </div>
+            
+
+            <div class="cpr-dd-middle">
+
+                <div class="cpr-dd-inner">
+                    <!--Top Left Quadrant - Emerging Stars    -->
+                    <section data-quadrant="emerging_stars">
+                     
+                     <div  class="scmBtn btn-primary cpr-btn" 
+                           data-ng-repeat="customer in apc.customersGroupByDest.emerging_stars track by $index" 
+                           data-ng-style="{ 'position': 'absolute', 'top' : '{{customer.yAxis}}', 'left': '{{customer.xAxis}}'  }" 
+                           data-custom-index="{{$index}}" 
+                           data-custom-custid="{{customer.customer_id}}"
+                           data-custom-id="{{customer.id}}" 
+                           data-custom-soruce="{{ customer.priority_source }}"
+                           data-ng-if="customer.showInQuadrant" data-ng-bind="customer.customer_name">
+                     </div>
+                     
+                    </section>
+                    <!--End of top left quadrant - Emerging Stars   -->
+
+                    <!--Top right quadrant - Partners-->
+                    <section data-quadrant="partners">
+                        
+                      <div  class="scmBtn btn-primary cpr-btn" 
+                           data-ng-repeat="customer in apc.customersGroupByDest.partners track by $index" 
+                           data-ng-style="{ 'position': 'absolute', 'top' : '{{customer.yAxis}}', 'left': '{{customer.xAxis}}'  }" 
+                           data-custom-index="{{$index}}" 
+                           data-custom-custid="{{customer.customer_id}}"
+                           data-custom-id="{{customer.id}}" 
+                           data-custom-soruce="{{ customer.priority_source }}"
+                           data-ng-if="customer.showInQuadrant" data-ng-bind="customer.customer_name">
+                     </div>
+                        
+                    </section>
+                    <!--End of top right - partners -->
+                </div>
+
+                <div class="cpr-dd-inner no-top-border">
+                    <!--Bottom left quadrant - Niche Players       -->
+                    <section data-quadrant="niche_players">
+                        
+                      <div  class="scmBtn btn-primary cpr-btn" 
+                           data-ng-repeat="customer in apc.customersGroupByDest.niche_players track by $index" 
+                           data-ng-style="{ 'position': 'absolute', 'top' : '{{customer.yAxis}}', 'left': '{{customer.xAxis}}'  }" 
+                           data-custom-index="{{$index}}" 
+                           data-custom-custid="{{customer.customer_id}}"
+                           data-custom-id="{{customer.id}}" 
+                           data-custom-soruce="{{ customer.priority_source }}"
+                           data-ng-if="customer.showInQuadrant" data-ng-bind="customer.customer_name">
+                      </div>
+                        
+                    </section>
+                    <!--End of bottom left - Niche players-->
+
+                    <!--Bottom right quadrant - Scale-->
+                    <section data-quadrant="scale">
+                        
+                       <div  class="scmBtn btn-primary cpr-btn" 
+                           data-ng-repeat="customer in apc.customersGroupByDest.scale track by $index" 
+                           data-ng-style="{ 'position': 'absolute', 'top' : '{{customer.yAxis}}', 'left': '{{customer.xAxis}}'  }" 
+                           data-custom-index="{{$index}}" 
+                           data-custom-custid="{{customer.customer_id}}"
+                           data-custom-id="{{customer.id}}" 
+                           data-custom-soruce="{{ customer.priority_source }}"
+                           data-ng-if="customer.showInQuadrant" data-ng-bind="customer.customer_name">
+                      </div>
+                        
+                    </section>
+                    <!--End of bottom right quadrant - Scale-->
+                </div>
+
+            </div>
+
+            <div class="cpr-dd-middle__legend">
+                Size and Profit
+                <br><span data-ng-bind=" '(' + apc.contribName + ')'"></span>
+            </div>
+         </div>     
+        </div>
+        
+        <div class="cpr-dd-right">
+
+            <!--Right side referance starts-->
+            
+            <aside> Drag and Drop Customer Labels into Chart </aside>
+
+            <table class="table table-bordered text-center scm-table cpr-no-margin">
+
+                <tbody>
+                    <tr class="heading-row">
+                        <td class="heading" style="width:20%">Emerging<br>Stars</td>
+                        <td class="cpr-drag">
+                            <div class="cpr-drag-wrapper" 
+                                 data-ng-repeat="customer in apc.customersGroupBySoruce.emerging_stars track by $index" data-ng-class="{ 'margin15' : $index > 2 }"> 
+                                
+                                <div class="scmBtn btn-primary cpr-btn" 
+                                     data-custom-index="{{$index}}"
+                                     data-custom-id="{{customer.id}}" 
+                                     data-custom-custid="{{customer.customer_id}}"
+                                     data-custom-soruce="{{ customer.priority_source }}"  
+                                     data-ng-if="customer.priority_dest ===''"   
+                                     data-ng-bind="customer.customer_name">
+                                </div>
+                                
+                                <span class="cpr-non-draggable" 
+                                      data-ng-class="{'missmatch' : customer.isMissMatch}" 
+                                      data-ng-show="customer.showText"
+                                      data-ng-bind="customer.customer_name"></span>
+                            </div>
+                            
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="heading" style="width:20%">Partners</td>
+
+                        <td class="cpr-drag">
+                            
+                            <div class="cpr-drag-wrapper" 
+                                 data-ng-repeat="customer in apc.customersGroupBySoruce.partners track by $index" data-ng-class="{ 'margin15' : $index > 2 }"> 
+                                
+                                <div class="scmBtn btn-primary cpr-btn" 
+                                     data-custom-index="{{$index}}"
+                                     data-custom-id="{{customer.id}}" 
+                                     data-custom-custId="{{customer.customer_id}}" 
+                                     data-custom-soruce="{{ customer.priority_source }}"  
+                                     data-ng-if="customer.priority_dest ===''"   
+                                     data-ng-bind="customer.customer_name">
+                                </div>
+                                
+                                <span class="cpr-non-draggable" 
+                                      data-ng-class="{'missmatch' : customer.isMissMatch}" 
+                                      data-ng-show="customer.showText"
+                                      data-ng-bind="customer.customer_name"></span>
+                            </div>
+                         
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="heading">Niche<br>Players</td>
+                        
+                        <td class="cpr-drag">
+                            
+                            <div class="cpr-drag-wrapper" 
+                                 data-ng-repeat="customer in apc.customersGroupBySoruce.niche_players track by $index" data-ng-class="{ 'margin15' : $index > 2 }"> 
+                                
+                                <div class="scmBtn btn-primary cpr-btn" 
+                                     data-custom-index="{{$index}}"
+                                     data-custom-id="{{customer.id}}" 
+                                     data-custom-custId="{{customer.customer_id}}"
+                                     data-custom-soruce="{{ customer.priority_source }}"  
+                                     data-ng-if="customer.priority_dest ===''"   
+                                     data-ng-bind="customer.customer_name">
+                                </div>
+                                
+                                <span class="cpr-non-draggable" 
+                                      data-ng-class="{'missmatch' : customer.isMissMatch}" 
+                                      data-ng-show="customer.showText"
+                                      data-ng-bind="customer.customer_name"></span>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td class="heading">Scale</td>
+                        <td class="cpr-drag">
+                            
+                            <div class="cpr-drag-wrapper" 
+                                 data-ng-repeat="customer in apc.customersGroupBySoruce.scale track by $index" 
+                                 data-ng-class="{ 'margin15' : $index > 2 }"> 
+                                
+                                <div class="scmBtn btn-primary cpr-btn" 
+                                     data-custom-index="{{$index}}"
+                                     data-custom-id="{{customer.id}}" 
+                                     data-custom-custId="{{customer.customer_id}}"
+                                     data-custom-soruce="{{ customer.priority_source }}"  
+                                     data-ng-if="customer.priority_dest ===''"   
+                                     data-ng-bind="customer.customer_name">
+                                </div>
+                                
+                                <span class="cpr-non-draggable" 
+                                      data-ng-class="{'missmatch' : customer.isMissMatch}" 
+                                      data-ng-show="customer.showText"
+                                      data-ng-bind="customer.customer_name"></span>
+                            </div>
+                                
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="heading">Unassigned</td>
+                        <td class="clearfix">
+                            <div class="cpr-drag-unassigned" 
+                                 data-ng-repeat="customer in apc.customersGroupBySoruce.unassigned track by $index" 
+                                 data-ng-switch="{{$last}}">
+                                 
+                                <span data-ng-bind="customer.customer_name + ',&nbsp;'" 
+                                      data-ng-switch-when="false"></span>
+                                 
+                                 <span data-ng-bind="customer.customer_name" 
+                                      data-ng-switch-when="true"></span>     
+                             </div>
+                              
+                                                  
+                        </td>
+
+                    </tr>
+                    
+                </tbody>
+
+            </table>
+            
+            <div class="cpr-dd-right__legend">
+                
+                <ul>
+                    <li>
+                        <section class="drag"></section>
+                        <section> Drag and drop/reposition customer labels into chart. </section>
+                    </li>
+                    <li>
+                        <section class="nondrag"></section>
+                        <section> Customer label has been placed in the matching quadrant. </section>
+                    </li>
+                    <li>
+                        <section class="mismatch"></section>
+                        <section> Customer label placed in a quadrant that doesn't match with priority assigned. Reposition the label or update priority in customer data. </section>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <!--End of right side referance-->
+
+        </div>
+
+    </div>

@@ -8,7 +8,9 @@
     &-wrapper{
         width: 100%;
         padding-top: 30px;
+       
      }
+     
     
     &-btns{
         
@@ -39,11 +41,10 @@
         
     }
     &-badge{
-        background: grey none repeat scroll 0 0;
-        color: #fff;
-        float: right;
-        padding: 7px 10px;
-        width: 80px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 5px;
     }
     &-chart-title{
         color: #006393;
@@ -53,36 +54,78 @@
         display: inline-block;
         margin-left: 120px;
     }
-    &-charts-wrapper{
-        width: 960px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        position: relative;
-        border: 1px dashed;
-        padding: 7px;
+    
+    &-charts{
+        
+        &-wrapper{
+            width: 1040px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            border: 1px dashed;
+            padding: 10px;
+            min-height: 300px;
+            
+            #capture_wrapper{
+                
+                 width: 1020px;
+                //border: 1px solid chartreuse;
+                margin: 0 auto;
+            }
+
+            aside{
+                    bottom: 13px;
+                    color: #252525;
+                    font-size: 12px;
+                    font-style: italic;
+                    font-weight: bold;
+                    position: absolute;
+                    right: 35px;
+                    z-index: 9999;
+                
+                &.cusIns-year-text{
+                    
+                    bottom: 12px;
+                    right: 15px;
+                }
+            }
+        }
+        
+        &-header{
+            text-align: center;
+            color: black;
+            padding: 10px;
+            font-size: 18px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
     }
     &-market{
+        
          &-labels{
-            left: 40px;
-            position: absolute;
-            top: 93px;
-            z-index: 1;
-            
+                   left: 22px;
+                   position: absolute;
+                   top: 168px;
+                   width: 225px;
+                   z-index: 1;
+
             ul{
                 font-size: 12px;
             }
+            
             li{
                 color: #000000;
                 font-size: 12px;
                 height: 48px;
                 text-align: right;
-                width: 112px;
                 margin-left: 0 !important;
             }
         }
 
         &-wrapper{
-            margin-left: 30px;
+            
+                margin-left: 110px;
+                width: 465px;
         }
     }
    
@@ -119,7 +162,18 @@
             width: 13px;
             margin: 3.5px 5px;
             &.mars-share{
-                background-color:#339966;
+                width: 6.5px;
+                margin: 0px;
+                &-green{
+                    
+                    background-color:#339966;
+                    
+                }
+                &-red{
+                    
+                    background-color: #FF5050;
+                    
+                }
             }
             &.remain-share{
                 background-color: #CCCBCA;
@@ -134,17 +188,17 @@
         &-axis{
             left: 71px;
             position: absolute;
-            top: 50px;
+            top: 70px;
             color: #000;
             font-weight: bold;
             z-index: 1;
             
         }   
         &-legends{
-            margin-left: 104px;
+            margin-left: 81px;
             li{
-                width: 160px;
-                margin-right: 35px;
+                width: 153px;
+                margin-right: 32px;
                 text-align: center;
                 margin-bottom: 30px;
                 color: #003974;
@@ -156,7 +210,7 @@
     } 
     &-print-btn{
         position: absolute;
-        right: -25px;
+        right: -22px;
         top: -12px;
         a{
             background: url("../images/cut-icon.png");

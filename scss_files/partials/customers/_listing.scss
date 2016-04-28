@@ -102,6 +102,27 @@
              
         }
     }
+    
+    &-help-text{
+        
+        padding-top: 10px;
+        
+        span{
+            
+            font-weight: bold; 
+            margin-right: 3px;
+        }
+        
+        a{
+            color: #333333;
+            &:hover{ 
+                
+                color: #333333;
+                text-decoration: underline;
+            }
+        }
+    }
+    
 }
 
 @import "cus-insights",

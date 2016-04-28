@@ -78,6 +78,10 @@ a{
 
 // *** End of overriding ***/
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 .scm{
 	
 
@@ -139,11 +143,11 @@ a{
    
    &-downloadBtn{
             
-            display: block;
-            background-image: url('../images/cut-btn.png');
-            width: 65px;
-            height: 32px;
-            text-indent: -9999px;
+            // display: block;
+            // background-image: url('../images/cut-btn.png');
+            // width: 65px;
+            // height: 32px;
+            // text-indent: -9999px;
             cursor:pointer;
       }
     
@@ -164,6 +168,24 @@ a{
                     
                 }
          }
+     }
+     &-bottom{
+         
+         &-ctrls{
+             
+             @extend .scm-top-ctrls;
+             
+             .bottom-legends{              
+                color: #333333;
+                float: right;
+                font-size: 13px;
+                font-style: italic;
+                font-weight: bold;
+                margin-bottom: 10px;
+                margin-top: -10px;               
+             }
+             
+         }
      }      
 }
 
@@ -174,4 +196,8 @@ a{
 .dl-anchor{
     @extend .chart-canvas;
     text-indent: -9999px;
+}
+
+.pad30{
+        padding-right: 30px !important;
 }

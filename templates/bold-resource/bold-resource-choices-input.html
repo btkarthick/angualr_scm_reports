@@ -1,124 +1,202 @@
 <h4>Bold Resource Choices Input</h4>
-
+<div class="alert alert-success" role="alert" data-ng-show="rio.showAlert" data-ng-cloak="">
+    Bold Resource Choices Input Saved Successfully.
+</div>
 <form name="faqForm" class="faq-form">
     <div class="row faq-wrapper">
-        <div class="form-group col-xs-4">
+        <div class="form-group col-xs-5">
 
             <h5 class="text-center">Emerging stars</h5>
             <div class="faq-emerging">
+            
+            <div class="faq-valid-message"> 
+               <span>*</span>All the fields must be less than {{ rio.maxlenShort }} characters long.
+             </div>                
+             
                 <label for="">What are the actions we are taking?</label>
-                <p>E.g. decrease trade spend budget to $XM</p>
-                <textarea data-ng-maxlength="140" name="ans_1" data-ng-model="rio.qn.emergingStars[0].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_1.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
+                <textarea data-ng-maxlength="rio.maxlenShort" 
+                          name="ans_1" 
+                          data-ng-model="rio.qn.emergingStars[0].SCM_Answers__r[0].Answer__c"
+                          class="form-control"
+                          placeholder="E.g. decrease trade spend budget to $XM"></textarea>
 
-                <label for="">What are the implications for shifting resource?
-            </label>
-                <p>E.g. decrease trade budget across 5 lowest-priority accounts</p>
-                <textarea data-ng-maxlength="140" name="ans_2" data-ng-model="rio.qn.emergingStars[1].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_2.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
-                <label for="">What are the implications for growth/share/profitability?
 
-            </label>
-                <p>E.g. anticipate 2% share loss in lowest-priority accounts</p>
-                <textarea data-ng-maxlength="140" name="ans_3" data-ng-model="rio.qn.emergingStars[2].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_3.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
+                <div data-ng-show="faqForm.ans_1.$error.maxlength" 
+                     class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+
+                <label for="">What are the implications for shifting resource? </label>
+
+                <textarea   data-ng-maxlength="rio.maxlenShort" 
+                            name="ans_2" 
+                            data-ng-model="rio.qn.emergingStars[1].SCM_Answers__r[0].Answer__c"
+                            class="form-control" 
+                            placeholder="E.g. decrease trade budget across 5 lowest-priority accounts"></textarea>
+
+                <div data-ng-show="faqForm.ans_2.$error.maxlength" 
+                     class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+                        
+                <label for="">What are the implications for growth/share/profitability?</label>
+
+                <textarea data-ng-maxlength="rio.maxlenShort" name="ans_3" data-ng-model="rio.qn.emergingStars[2].SCM_Answers__r[0].Answer__c"
+                    class="form-control" placeholder="E.g. anticipate 2% share loss in lowest-priority accounts" name=""></textarea>
+
+                <div data-ng-show="faqForm.ans_3.$error.maxlength" class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
             </div>
+            
         </div>
 
-        <div class="form-group col-xs-4">
+        <div class="form-group form-group-last col-xs-7">
             <h5 class="text-center">Partners</h5>
             <div class="faq-partners">
+                
+                <div class="faq-valid-message"> 
+                    <span>*</span>All the fields must be less than {{ rio.maxlenLong }} characters long.
+                </div>
+                
                 <label for="">What are the actions we are taking?
             </label>
-                <p>E.g. move to top position in CSL priority order</p>
-                <textarea data-ng-maxlength="240" name="ans_4" data-ng-model="rio.qn.partners[0].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_4.$error.maxlength" class="error">This field can be at most 240 characters long.</div>
+                <textarea data-ng-maxlength="rio.maxlenLong" name="ans_4" data-ng-model="rio.qn.partners[0].SCM_Answers__r[0].Answer__c"
+                    class="form-control" placeholder="E.g. move to top position in CSL priority order" name=""></textarea>
+
+                <div data-ng-show="faqForm.ans_4.$error.maxlength" class="error">This field can be at most {{rio.maxlenLong}} characters long.</div>
                 <label for="">What are the implications for shifting resource?
             </label>
-                <p>E.g. allocation increased for Retailer Z</p>
 
-                <textarea data-ng-maxlength="240" name="ans_5" data-ng-model="rio.qn.partners[1].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_5.$error.maxlength" class="error">This field can be at most 240 characters long.</div>
+                <textarea data-ng-maxlength="rio.maxlenLong" name="ans_5" data-ng-model="rio.qn.partners[1].SCM_Answers__r[0].Answer__c"
+                    class="form-control" placeholder="E.g. allocation increased for Retailer Z" name=""></textarea>
+
+                <div data-ng-show="faqForm.ans_5.$error.maxlength" class="error">This field can be at most {{rio.maxlenLong}} characters long.</div>
 
                 <label for="">What are the implications for growth/share/profitability?
             </label>
-                <p>E.g. uplift of 3% expected</p>
-                <textarea data-ng-maxlength="240" name="ans_6" data-ng-model="rio.qn.partners[2].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_6.$error.maxlength" class="error">This field can be at most 240 characters long.</div>
-            </div>
-        </div>
-        <div class="form-group form-group-last col-xs-4">
-            <h5 class="text-center">Niche players</h5>
-            <div class="faq-niche">
-                <label class="label-noEg" for="">What are the actions we are taking?
-            </label>
-                <textarea data-ng-maxlength="140" name="ans_7" data-ng-model="rio.qn.nichePlayers[0].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_7.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
 
-                <label class="label-noEg" for="">What are the implications for shifting resource?
-            </label>
-                <textarea data-ng-maxlength="140" name="ans_8" data-ng-model="rio.qn.nichePlayers[1].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_8.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
-                <label class="label-noEg" for="">What are the implications for growth/share/profitability?
-            </label>
-                <textarea data-ng-maxlength="140" name="ans_9" data-ng-model="rio.qn.nichePlayers[2].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_9.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
+                <textarea data-ng-maxlength="rio.maxlenLong" name="ans_6" data-ng-model="rio.qn.partners[2].SCM_Answers__r[0].Answer__c"
+                    class="form-control" name="" placeholder="E.g. uplift of 3% expected"></textarea>
+
+                <div data-ng-show="faqForm.ans_6.$error.maxlength" class="error">This field can be at most {{rio.maxlenLong}} characters long.</div>
+
             </div>
+           
         </div>
+
     </div>
 
     <div class="row faq-wrapper">
-        <div class="form-group col-xs-6">
+
+        <div class="form-group col-xs-5">
+            <h5 class="text-center">Niche players</h5>
+            <div class="faq-niche">
+                
+                <div class="faq-valid-message"> 
+                    <span>*</span>All the fields must be less than {{ rio.maxlenShort }} characters long.
+                </div>
+                                
+                <label for="">What are the actions we are taking? </label>
+                <textarea data-ng-maxlength="rio.maxlenShort" name="ans_7" data-ng-model="rio.qn.nichePlayers[0].SCM_Answers__r[0].Answer__c"
+                    class="form-control" name=""></textarea>
+
+                <div data-ng-show="faqForm.ans_7.$error.maxlength" class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+
+                <label for="">What are the implications for shifting resource?
+            </label>
+                <textarea data-ng-maxlength="rio.maxlenShort" name="ans_8" data-ng-model="rio.qn.nichePlayers[1].SCM_Answers__r[0].Answer__c"
+                    class="form-control" name=""></textarea>
+
+                <div data-ng-show="faqForm.ans_8.$error.maxlength" class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+                <label for="">What are the implications for growth/share/profitability?
+            </label>
+                <textarea data-ng-maxlength="rio.maxlenShort" name="ans_9" data-ng-model="rio.qn.nichePlayers[2].SCM_Answers__r[0].Answer__c"
+                    class="form-control" name=""></textarea>
+
+                <div data-ng-show="faqForm.ans_9.$error.maxlength" class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+            </div>
+           
+        </div>
+
+        <div class="form-group form-group-last col-xs-7">
             <h5 class="text-center">Scale</h5>
             <div class="faq-scale">
-                <label class="label-noEg" for="">What are the actions we are taking?
+                
+                <div class="faq-valid-message"> 
+                    <span>*</span>All the fields must be less than {{ rio.maxlenLong }} characters long.
+                </div>
+                
+                <label for="">What are the actions we are taking?
                 </label>
-                <textarea data-ng-maxlength="240" name="ans_10" data-ng-model="rio.qn.scale[0].SCM_Answers__r[0].Answer__c" class="form-control"
+                <textarea data-ng-maxlength="rio.maxlenLong" name="ans_10" data-ng-model="rio.qn.scale[0].SCM_Answers__r[0].Answer__c" class="form-control"
                     name=""></textarea>
-                <div data-ng-show="faqForm.ans_10.$error.maxlength" class="error">This field can be at most 240 characters long.</div>
-                <label class="label-noEg" for="">What are the implications for shifting resource?
+
+                <div data-ng-show="faqForm.ans_10.$error.maxlength" class="error">This field can be at most {{rio.maxlenLong}} characters long.</div>
+                <label for="">What are the implications for shifting resource?
                 </label>
-                <textarea data-ng-maxlength="240" name="ans_11" data-ng-model="rio.qn.scale[1].SCM_Answers__r[0].Answer__c" class="form-control"
+                <textarea data-ng-maxlength="rio.maxlenLong" name="ans_11" data-ng-model="rio.qn.scale[1].SCM_Answers__r[0].Answer__c" class="form-control"
                     name=""></textarea>
-                <div data-ng-show="faqForm.ans_11.$error.maxlength" class="error">This field can be at most 240 characters long.</div>
-                <label class="label-noEg" for="">What are the implications for growth/share/profitability?
+
+                <div data-ng-show="faqForm.ans_11.$error.maxlength" class="error">This field can be at most {{rio.maxlenLong}} characters long.</div>
+                <label for="">What are the implications for growth/share/profitability?
                 </label>
-                <textarea data-ng-maxlength="240" name="ans_12" data-ng-model="rio.qn.scale[2].SCM_Answers__r[0].Answer__c" class="form-control"
+                <textarea data-ng-maxlength="rio.maxlenLong" name="ans_12" data-ng-model="rio.qn.scale[2].SCM_Answers__r[0].Answer__c" class="form-control"
                     name=""></textarea>
-                <div data-ng-show="faqForm.ans_12.$error.maxlength" class="error">This field can be at most 240 characters long.</div>
+
+                <div data-ng-show="faqForm.ans_12.$error.maxlength" class="error">This field can be at most {{rio.maxlenLong}} characters long.</div>
 
             </div>
+            
         </div>
-        <div class="form-group form-group-last col-xs-6">
-            <h5 class="text-center">Others</h5>
-            <div class="faq-other">
-                <label class="label-noEg" for="">What are the actions we are taking?
-                </label>
-                <textarea data-ng-maxlength="140" name="ans_13" data-ng-model="rio.qn.others[0].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_13.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
-                <label class="label-noEg" for="">What are the implications for shifting resource?
-                </label>
-                <textarea data-ng-maxlength="140" name="ans_14" data-ng-model="rio.qn.others[1].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_14.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
-                <label class="label-noEg" for="">What are the implications for growth/share/profitability?
-                </label>
-                <textarea data-ng-maxlength="140" name="ans_140" data-ng-model="rio.qn.others[2].SCM_Answers__r[0].Answer__c" class="form-control"
-                    name=""></textarea>
-                <div data-ng-show="faqForm.ans_140.$error.maxlength" class="error">This field can be at most 140 characters long.</div>
-            </div>
-        </div>
+
     </div>
+
+    <div class="row faq-wrapper">
+        <div class="form-group form-group-last">
+            <h5 class="faq-other-text">Others</h5>
+
+            <div class="faq-other">
+             
+             <div class="faq-valid-message"> 
+                <span>*</span>All the fields must be less than {{ rio.maxlenShort }} characters long.
+            </div>
+             
+                <div class="col-xs-4">
+                    <label for="">What are the actions we are taking?</label>
+                    <textarea data-ng-maxlength="rio.maxlenShort" name="ans_13" data-ng-model="rio.qn.others[0].SCM_Answers__r[0].Answer__c"
+                        class="form-control"></textarea>
+
+                    <div data-ng-show="faqForm.ans_13.$error.maxlength" class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+                </div>
+
+                <div class="col-xs-4">
+                    
+                    <label  for="">What are the implications for shifting resource?</label>
+		            <textarea data-ng-maxlength="rio.maxlenShort" 
+                              name="ans_14" data-ng-model="rio.qn.others[1].SCM_Answers__r[0].Answer__c" 			class="form-control">
+                    </textarea>
+
+		        <div data-ng-show="faqForm.ans_14.$error.maxlength" 
+                     class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+
+                </div>
+
+                <div class="col-xs-4">
+                    
+                    <label  for="">What are the implications for growth/share/profitability?</label>
+		
+		            <textarea   data-ng-maxlength="rio.maxlenShort" 
+                                name="ans_15" 
+                                data-ng-model="rio.qn.others[2].SCM_Answers__r[0].Answer__c" 
+                                class="form-control"></textarea>
+
+		            <div data-ng-show="faqForm.ans_15.$error.maxlength" 
+                         class="error">This field can be at most {{rio.maxlenShort}} characters long.</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4 faq-buttons">
             <a class="scmBtn btn-warning" data-ng-click="rio.resetForm();">Reset</a>

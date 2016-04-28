@@ -31,21 +31,23 @@ var gulp = require('gulp'),
 var DEBUG = false;
 
 var VENDORS_JS_INPUT = [
-    './scripts/lodash.custom.min.js',
+    './scripts/lodash-4.11.2.min.js',
     './scripts/angular.v1.5.3.min.js',
     './scripts/angular-ui-router.v0.2.18.min.js',
     './scripts/angular-animate.v1.5.3.min.js',
     './scripts/angular-messages.v1.5.3.min.js',
     './scripts/angular-sanitize.v1.5.3.min.js',
-    // './scripts/angular-dragdrop.min.js',
-    './scripts/ui-bootstrap-custom-tpls-1.2.5.min.js',
+    './scripts/ui-bootstrap-custom-tpls-1.3.2.min.js',
     './scripts/angular.ngforce.js',
     './scripts/ngforce.sf.template.js',
     './scripts/ngforce.visualforce.remoting.js',
     './scripts/rgbcolor.min.js',
     './scripts/StackBlur.min.js',
     './scripts/canvg.min.js',
-    './scripts/html2canvas.min.js'
+    './scripts/html2canvas.min.js',
+    './scripts/blob.min.js',
+    './scripts/canvas-toBlob.min.js',
+    './scripts/fileSaver.min.js'
 ];
 
 var MODULESLIST = ['forecasts', 'customer', 'bold-resource'];
@@ -127,7 +129,7 @@ gulp.task('serve', ['styles'], function () {
 
     // gulp.watch('scmapp/**/*.js').on("change", browserSync.reload);
 
-    //gulp.watch("*.html").on("change", browserSync.reload);
+    gulp.watch("home.html").on("change", browserSync.reload);
 });
 
 

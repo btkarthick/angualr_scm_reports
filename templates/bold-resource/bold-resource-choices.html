@@ -4,11 +4,14 @@
 
         <h4>Resource Planning</h4>
 
-        <div class="scm-downloadBtn">
-            <span> Download Output </span>
+        <div class="scm-downloadBtn" id="save_chart">
+            <!--<span> Download Output </span>-->
+            <a class="scmBtn btn-primary">Download</a>
         </div>
 
     </div>
+
+    <div print-res-plan=""></div>
 
     <div class="row" data-ng-if="res.resourcesList.nonAdjustedItemCount > 0">
         <div class="col-xs-8 col-xs-offset-2 res-wraning">
@@ -22,7 +25,8 @@
     </div>
 
 
-    <div class="table-responsive resMarTop">
+    <div class="table-responsive resMarTop" id="capture_wrapper">
+        <p class="res-table-header">Detailed resource planning by customer</p>
         <table class="table table-bordered text-center scm-table">
 
             <tbody>
@@ -41,9 +45,9 @@
                                 <td class="heading">Customer</td>
                                 <td class="heading">2015<br>RSV</td>
                                 <td class="heading">2020<br>RSV</td>
-                                <td class="heading">Trade<br>$M</td>
-                                <td class="heading">Other<br>$M</td>
-                                <td class="heading">Total $M</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">Trade Expenditure<br>$m</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Total Customers Resources - excluding trade expenditure">Other Resources<br>$m</td>
+                                <td class="heading">Total $m</td>
                                 <td class="heading sep-column">% Total</td>
                             </tr>
 
@@ -92,9 +96,9 @@
                                 <td class="heading">Customer</td>
                                 <td class="heading">2015<br>RSV</td>
                                 <td class="heading">2020<br>RSV</td>
-                                <td class="heading">Trade<br>$M</td>
-                                <td class="heading">Other<br>$M</td>
-                                <td class="heading">Total $M</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">Trade Expenditure<br>$m</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Total Customers Resources - excluding trade expenditure">Other Resources<br>$m</td>
+                                <td class="heading">Total $m</td>
                                 <td class="heading sep-column">% Total</td>
                             </tr>
 
@@ -155,9 +159,9 @@
                                 <td class="heading">Customer</td>
                                 <td class="heading">2015<br>RSV</td>
                                 <td class="heading">2020<br>RSV</td>
-                                <td class="heading">Trade<br>$M</td>
-                                <td class="heading">Other<br>$M</td>
-                                <td class="heading">Total $M</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">Trade Expenditure<br>$m</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Total Customers Resources - excluding trade expenditure">Other Resources<br>$m</td>
+                                <td class="heading">Total $m</td>
                                 <td class="heading sep-column">% Total</td>
                             </tr>
 
@@ -206,9 +210,9 @@
                                 <td class="heading">Customer</td>
                                 <td class="heading">2015<br>RSV</td>
                                 <td class="heading">2020<br>RSV</td>
-                                <td class="heading">Trade<br>$M</td>
-                                <td class="heading">Other<br>$M</td>
-                                <td class="heading">Total $M</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">Trade Expenditure<br>$m</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Total Customers Resources - excluding trade expenditure">Other Resources<br>$m</td>
+                                <td class="heading">Total $m</td>
                                 <td class="heading sep-column">% Total</td>
                             </tr>
 
@@ -267,9 +271,9 @@
                                 <td class="heading">Customer</td>
                                 <td class="heading">2015 RSV</td>
                                 <td class="heading">2020 RSV</td>
-                                <td class="heading">Trade $M</td>
-                                <td class="heading">Other $M</td>
-                                <td class="heading">Total $M</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">Trade Expenditure<br>$m</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Total Customers Resources - excluding trade expenditure">Other Resources<br>$m</td>
+                                <td class="heading">Total $m</td>
                                 <td class="heading">% Total</td>
                             </tr>
 
@@ -316,9 +320,9 @@
                                 <td class="heading">Customer</td>
                                 <td class="heading">2015 RSV</td>
                                 <td class="heading">2020 RSV</td>
-                                <td class="heading">Trade $M</td>
-                                <td class="heading">Other $M</td>
-                                <td class="heading">Total $M</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">Trade Expenditure<br>$m</td>
+                                <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Total Customers Resources - excluding trade expenditure">Other Resources<br>$m</td>
+                                <td class="heading">Total $m</td>
                                 <td class="heading">% Total</td>
                             </tr>
 
@@ -345,5 +349,7 @@
 
         </table>
     </div>
+
+    
 
 </div>

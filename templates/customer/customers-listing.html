@@ -50,33 +50,60 @@
 
                 <tr class="heading-row">
                     <td rowspan="2" class="heading cust-name-heading">Customer</td>
-                    <td rowspan="2" class="heading cust-name-heading">Marked<br>Other</td>
+                    
+                    <td rowspan="2" 
+                        class="heading cust-name-heading" 
+                        data-tooltip-append-to-body="true" 
+                        data-uib-tooltip='Customers marked as "other" will be aggregated and will not appear in the customer prioritisation chart or resource planning screen.'>
+                        Marked<br>Other
+                    </td>
                     <td colspan="2" class="heading sep-column">Total FMCG Sales</td>
                     <td colspan="3" class="heading sep-column">Overall Category Sales by<br/>Customer (RSV)</td>
                     <td colspan="3" class="heading sep-column">Mars Category Sales by<br/>Customer (RSV)</td>
                     <td colspan="3" class="heading sep-column">{{ contributionName }}</td>
-                    <td rowspan="2" class="heading"> Other<br/>($M) </td>
-                    <td rowspan="2" class="heading"> Trade<br/>($M) </td>
-                    <td rowspan="2" class="heading"> Adjusted<br/>Customer<br/>Priority </td>
+                    
+                    <td colspan="2" class="heading sep-column">Total<br>Resources</td>
+                    
+                    <td rowspan="2" 
+                        class="heading"
+                        data-tooltip-append-to-body="true" 
+                        data-uib-tooltip="Manually adjust customer prioritisation based on strategic alignment. Select one of the values from the drop down. Overrides the priority assigned by the system (seen on the Customer Prioritisation chart)">
+                        
+                        Confirmed<br/>Customer<br/>Priority 
+                        
+                    </td>
                     <td rowspan="2" class="heading scm-pad16">Edit</td>
                 </tr>
 
                 <tr>
-                    <td class="heading">2015<br/>($M)</td>
-                    <td class="heading sep-column">2020<br/>($M)</td>
+                    <td class="heading">2015<br/>($m)</td>
+                    <td class="heading sep-column">2020<br/>($m)</td>
 
-                    <td class="heading">2015<br/>($M)</td>
-                    <td class="heading">2020<br/>($M)</td>
+                    <td class="heading">2015<br/>($m)</td>
+                    <td class="heading">2020<br/>($m)</td>
                     <td class="heading sep-column">2020 %<br/>of total</td>
 
-                    <td class="heading">2015<br/>($M)</td>
-                    <td class="heading">2020<br/>($M)</td>
+                    <td class="heading">2015<br/>($m)</td>
+                    <td class="heading">2020<br/>($m)</td>
                     <td class="heading sep-column">2020 %<br/>of total</td>
-
-                    <td class="heading">2015<br/>($M)</td>
-                    <td class="heading">2020<br/>($M)</td>
+                    
+                    <td class="heading">2015<br/>($m)</td>
+                    <td class="heading">2020<br/>($m)</td>
                     <td class="heading sep-column">2020 %<br/>of total</td>
-
+                    
+                    <td class="heading" 
+                        data-tooltip-append-to-body="true" 
+                        data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV">
+                        Trade Expenditure<br/>($m)
+                    </td>
+                    
+                    <td class="heading" 
+                        data-tooltip-append-to-body="true" 
+                        data-uib-tooltip="Total Customers Resources - excluding trade expenditure">
+                         
+                        Other Resources<br/>($m) 
+                    </td>
+                              
                 </tr>
 
                 <tr data-ng-repeat-start="customer in custLvl.customerDetails.custTransactions track by $index">
@@ -102,8 +129,8 @@
                     <td>{{ customer.Contribution_Actual__c | formatNumber}}</td>
                     <td>{{ customer.Contribution_Forecast__c | formatNumber}}</td>
                     <td>{{ customer.Contribution_Total__c }}</td>
-                    <td>{{ customer.Other__c | formatNumber}}</td>
                     <td>{{ customer.Trade__c | formatNumber}}</td>
+                    <td>{{ customer.Other__c | formatNumber}}</td>
                     <td>{{ customer.SCM_Customer_Strategic_Adjust__r.Name }}</td>
                     <td class="channel-edit">
                         <span data-ng-click="custLvl.editCustModal(customer.Id)">

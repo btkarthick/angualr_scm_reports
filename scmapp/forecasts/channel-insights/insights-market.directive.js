@@ -47,33 +47,50 @@
         };
 
         var linkFunc = function (scope, element, attrs, $ctrl) {
+            
             var sizeElement;
 
             var growthElement;
 
             var setMarketChart = function (data) {
-
-                var channelSizeData = MarDataService.getSizeTable(data);
-
+                
+                setGrowthChart(data);
+                setSizeChart(data);
+                
+            };
+            
+            
+            var setGrowthChart = function(data){
+                 
                 var channelGrowthData = MarDataService.getGrowthTable(data);
-
-                var channelSizeOptions = MarDataService.channelSizeOptions;
-
+                
                 var channelGrowthOptions = MarDataService.channelGrowthOptions;
-
-                sizeElement = document.getElementById('channel_size');
 
                 growthElement = document.getElementById('channel_growth');
 
-                channelSizeOptions.height = (660 / 11) * (channelSizeData.length - 1);
-
                 channelGrowthOptions.height = (660 / 11) * (channelGrowthData.length - 1);
-
-                InsightsChartService.setBarChart(sizeElement, channelSizeData, channelSizeOptions);
 
                 InsightsChartService.setBarChart(growthElement, channelGrowthData, channelGrowthOptions);
 
-
+                
+            };
+            
+            var setSizeChart = function(data){
+                
+                var channelSizeData = MarDataService.getSizeTable(data);
+                
+                var channelSizeOptions = MarDataService.channelSizeOptions;
+                
+                var channelSizeMaxVal = MarDataService.getSizeMaxVal(data.chartData);
+                
+                channelSizeOptions.hAxis.viewWindow.max = channelSizeMaxVal;
+                
+                sizeElement = document.getElementById('channel_size');
+                
+                channelSizeOptions.height = (660 / 11) * (channelSizeData.length - 1);
+                
+                InsightsChartService.setBarChart(sizeElement, channelSizeData, channelSizeOptions);
+                
             };
 
             var bindDownloadEvent = function () {
@@ -85,7 +102,7 @@
                     $ctrl.helperService.chartSvgToCanvas(sizeElement, elementsForSave.sizeCanvasContainer);
                     $ctrl.helperService.chartSvgToCanvas(growthElement, elementsForSave.growthCanvasContainer);
 
-                    $ctrl.helperService.saveChartAsImage([sizeElement,growthElement], [elementsForSave.sizeCanvasContainer,elementsForSave.growthCanvasContainer], elementsForSave.wrapperToCap, elementsForSave.imageName, elementsForSave.downloadEl);
+                    $ctrl.helperService.saveChartAsImage([sizeElement,growthElement], [elementsForSave.sizeCanvasContainer,elementsForSave.growthCanvasContainer], elementsForSave.wrapperToCap, elementsForSave.imageName);
 
 
                 });
@@ -98,8 +115,7 @@
                     growthCanvasContainer: document.getElementById("chart_canvas_growth"),
                     sizeCanvasContainer: document.getElementById("chart_canvas_size"),
                     wrapperToCap: document.getElementById("capture_wrapper"),
-                    imageName: 'market-position',
-                    downloadEl: document.getElementById("download_anchor")
+                    imageName: 'Market Position'
                     
                 };
             };
@@ -114,23 +130,6 @@
                         legends.push(format.format);
                     }
                 });
-
-                
-                /** Commentted by Karthick B - As this is no longer needed 
-                _.forEach(legends, function (legend, i) {
-                    legend = legend.toLowerCase();
-                    legend = legend.split(' ');
-                    _.forEach(legend, function (val, j) {
-
-                        var firstLetter = val.charAt(0).toUpperCase();
-                        val = firstLetter + val.substring(1, val.length);
-                        legend[j] = val;
-
-                    });
-                    legend = legend.toString().replace(/,/g, ' ');
-                    legends[i] = legend; 
-
-                }); *******/
                 
                 $ctrl.fairShare = response.fairShare + '%';
                 $ctrl.unitName = response.unitName;

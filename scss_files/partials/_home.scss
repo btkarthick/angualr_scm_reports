@@ -9,11 +9,8 @@
     &-wrapper{
         
         width: 100%;
-        padding-top: 20px;
-        padding-bottom: 50px;
-       
-        
-       }
+        padding-top: 5px;
+     }
        
        &-link{
            
@@ -30,11 +27,38 @@
            }
        }
        
+       &-title{
+           
+           width: 100%;
+           text-align: center;
+           padding-top: 10px;
+           color: #333333;
+           font-size: 22px;
+           font-weight: bold;
+       }
+       
+       &-content{
+           
+           padding-top: 15px;
+           color: #333333;
+           font-size: 14px;
+           text-align: center;
+           width: 960px;
+           margin: 0 auto;
+       }
+       
+       &-banner{
+           
+                margin: 0 auto;
+                padding-top: 25px;
+                width: 560px;
+       }
+       
        &-inner{
            
            width: 750px;
            margin: 0 auto;
-           margin-top: 50px;
+           margin-top: 25px;
            border: 1px solid #dddddd;
            border-radius: 4px;
            
@@ -50,7 +74,7 @@
                 color: #FFFFFF;
                 SELECT{
                     
-                    margin-left: 5px;
+                    margin-left: 10px;
                     
                 }
           }
@@ -113,5 +137,47 @@
                }            
            }
            
+       }
+       
+       &-bot{
+           
+           &-links{
+               
+               color: #333333;
+               font-size: 14px;
+               width: 960px;
+               margin: 0 auto;
+               padding-top: 20px;
+               padding-bottom: 25px;
+               
+               section{
+                   margin-left: 8px;
+               }
+               
+               ul{
+                   margin-top: 10px;
+                   padding: 0 !important;
+                   li{
+                       margin-top: 5px;
+                       a{
+                           color: #333333;
+                           font-size: 14px;
+                           text-decoration: underline;
+                           &:hover{
+                               color: #333333;
+                               text-decoration: underline;
+                           }
+                       }
+                   }
+               }
+           }
+       }
+       
+       &-help{
+           
+           font-weight: bold;
+           padding-top: 5px;
+           margin-left: 8px;
+           a{ text-decoration: underline; }
        }
 }

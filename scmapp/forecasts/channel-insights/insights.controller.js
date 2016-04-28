@@ -17,7 +17,7 @@
 'use strict';
 
 
-var setInsightsController = function ( InsightsChartService, $uibModal) {
+var setInsightsController = function ( InsightsChartService, ngForceConfig) {
         
         var vm = this;
         
@@ -26,6 +26,8 @@ var setInsightsController = function ( InsightsChartService, $uibModal) {
         vm.showMarket = true;
         
         vm.showResources = false;
+        
+        vm.chartTitle = ngForceConfig.unitCountry + ' ' + ngForceConfig.unitSegment;
         
         
         vm.setToogleCharts = function( type ){
@@ -42,13 +44,7 @@ var setInsightsController = function ( InsightsChartService, $uibModal) {
             }
         };
         
-        vm.showModalToDownload = function(){
             
-           alert('This feature is under development' );
-            
-        };
-        
-        
         
         
     }
@@ -57,6 +53,6 @@ var setInsightsController = function ( InsightsChartService, $uibModal) {
         .module('scm.forecasts')
         .controller('InsightsCtrl', setInsightsController);
 
-    setInsightsController.$inject = [ 'InsightsChartService', '$uibModal' ];
+    setInsightsController.$inject = [ 'InsightsChartService', 'ngForceConfig' ];
 
 })();

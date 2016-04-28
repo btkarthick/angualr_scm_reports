@@ -11,22 +11,22 @@
  * Wrap everything in an IFFE
  * 
  */
-(function() {
+(function () {
 
     'use strict';
 
-    var setMarketDataService = function() {
+    var setMarketDataService = function () {
 
         var channelSizeTable = new Array();
-        
-        var sizeDomainHeader =  [
+
+        var sizeDomainHeader = [
             'Domain'
             , 'Mars Share of Channel', { role: 'style' }, { role: 'annotation' }
             , 'Remaining Channel'
 
         ];
 
-        var getSharePercentage = function(sharePercent, fairShare) {
+        var getSharePercentage = function (sharePercent, fairShare) {
 
             var barColor = '#339966';
 
@@ -40,19 +40,19 @@
 
         };
 
-        var getSizeDataRow = function(rawMarketData) {
+        var getSizeDataRow = function (rawMarketData) {
 
             var fairShare = rawMarketData.fairShare;
             rawMarketData = _.reverse(rawMarketData.chartData);
 
-            var chartSpacing = 2,isFirst = true;
+            var chartSpacing = 2, isFirst = true;
 
-            _.forEach(rawMarketData, function(value, i) {
-                
+            _.forEach(rawMarketData, function (value, i) {
+
                 if (!value.hideCategory) {
-                    
+
                     var row = new Array();
-                    var barColor = getSharePercentage( value.sharePercent, fairShare);
+                    var barColor = getSharePercentage(value.sharePercent, fairShare);
 
                     if (!isFirst) {
 
@@ -69,7 +69,7 @@
 
         };
 
-        var getSizeTable = function(rawMarketData) {
+        var getSizeTable = function (rawMarketData) {
             channelSizeTable = new Array();
             channelSizeTable.push(sizeDomainHeader);
             getSharePercentage(rawMarketData);
@@ -78,24 +78,24 @@
         };
 
         var channelGrowthTable = new Array();
-        
+
         var growthDomainHeader = [
             'Element'
             , 'Mars Share of Channel', { role: 'annotation' }
         ];
 
 
-        var getGrowthDataRow = function(rawGrowthData) {
+        var getGrowthDataRow = function (rawGrowthData) {
 
             rawGrowthData = rawGrowthData.chartData;
 
-           var chartSpacing = 2,isFirst = true;
+            var chartSpacing = 2, isFirst = true;
 
-            _.forEach(rawGrowthData, function(value, i) {
+            _.forEach(rawGrowthData, function (value, i) {
                 if (!value.hideCategory) {
 
                     var row = new Array();
-                     if (!isFirst) {
+                    if (!isFirst) {
 
                         chartSpacing = chartSpacing + 4;
 
@@ -109,11 +109,24 @@
             });
         };
 
-        var getGrowthTable = function(rawGrowthData) {
+        var getGrowthTable = function (rawGrowthData) {
             channelGrowthTable = new Array();
             channelGrowthTable.push(growthDomainHeader);
             getGrowthDataRow(rawGrowthData);
             return channelGrowthTable;
+        };
+
+        var setSizeMaxVal = function (sizeData) {
+            var totShare = [];
+
+            _.forEach(sizeData, function (share) {
+                totShare.push(share.marsCategory + share.remainingShare);
+            });
+            
+            var maxSize = _.max(totShare);
+            maxSize = Math.round(maxSize) + 100;
+            
+            return maxSize;
         };
 
 
@@ -125,23 +138,26 @@
             isStacked: true,
             chartArea: { top: '3%', left: '26%', width: '66%', height: '80%' },
             hAxis: {
-                    title: 'Channel size (RSV, $M)',
+                title: 'Channel size (RSV, $m)',
                 titleTextStyle: {
                     bold: true,
                     italic: false,
                     fontSize: 12
-                },  
-                 gridlines: { count: 4, color: '#fff' },
-                 baseline: 1,
+                },
+                gridlines: { count: 4, color: '#fff' },
+                baseline: 1,
                 baselineColor: '#000',
-                
+                viewWindow : {
+                    max: 2000
+                }
+
             },
             tooltip: {
                 trigger: 'none'
             },
             colors: ['#339966', '#CCCBCA'],
             vAxis: {
-                gridlines: { count: 3, color: '#fff' }, 
+                gridlines: { count: 3, color: '#fff' },
                 baseline: 0,
                 baselineColor: '#000',
                 textPosition: 'none'
@@ -200,6 +216,8 @@
         this.getSizeTable = getSizeTable;
 
         this.getGrowthTable = getGrowthTable;
+
+        this.getSizeMaxVal = setSizeMaxVal;
 
     }
 

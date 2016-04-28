@@ -35,7 +35,6 @@
             
             vm.qn = angular.copy(questions);
             
-            console.log( vm.qn );
             
         };
         

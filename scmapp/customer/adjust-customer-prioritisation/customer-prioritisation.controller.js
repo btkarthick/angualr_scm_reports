@@ -13,34 +13,61 @@
  */
 
 (function () {
-    
+
     'use strict';
 
-    var setCustPrioritisationController = function ( cprserv ) {
+    var setCustPrioritisationController = function (cprserv, CustProfitChartService, $timeout) {
 
         var vm = this;
-      
-         //Private related functions //
-         
-         var getPriorityOnLoad = function(){
-             
-             cprserv.getPriorityDetails()
-             
-                    .then( function( response ){
+
+        vm.showSuccess = false;
+        
+        vm.showFailure = false;
+        
+        vm.resetFlag = false;
+        
+        vm.priorityData = [];
+
+        
+        vm.setResetGraph = function(){
+            
+            vm.resetFlag = true;
+        };
+        
+        vm.saveGraphChanges = function(){
+                     
+            cprserv.setSaveGraphPostions( vm.priorityData )
+                   .then( saveGraphSuccess, saveGraphFailure );
+          
+        };
+
+        
+        //Private related functions starts //
+       
+        var saveGraphSuccess = function( response ){
+            
+                if( response.length > 0 ){
+                    
+                    vm.showSuccess = true;
+                    
+                    $timeout(function(){
                         
-                        console.log( response );
-                    })
-       };
-         
+                         vm.showSuccess = false;
+                        
+                    },5000);
+                }
+        };
 
-         getPriorityOnLoad();
-
+     
+        var saveGraphFailure = function(){
+            
+        };
     };
 
     angular
         .module('scm.customer')
         .controller('CustPriorCtrl', setCustPrioritisationController);
 
-    setCustPrioritisationController.$inject = [ 'cprserv' ];
+    setCustPrioritisationController.$inject = ['cprserv', 'CustProfitChartService', '$timeout'];
 
 })();

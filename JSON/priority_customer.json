@@ -1,13 +1,33 @@
 [
-  {
-    "statusCode": 200,
-    "type": "rpc",
-    "tid": 2,
-    "ref": false,
-    "action": "SCMCustomerPrioritisation",
-    "method": "StrategicPlannigChart",
-    "result": [
-      {
+    {
+        "Id": "SGez0000000e10KF12HTY",
+        "SCM_Customer__c": "brc7800000FtkO0Sj",
+        "SCM_Customer_Contribution__c": "a1cf00005005NKKBB2",
+        "Other_Customer__c": false,
+        "SCM_Customer_Strategic_Adjust__c": "a1df0000000DWLzAAO",
+        "Unit_Country__c": "a1Tf00000005OGxEAM",
+        "Unit_Segment__c": "a1Uf00000000cHFEAY",
+        "CurrencyIsoCode": "USD",
+        "SCM_Customer_Adjusted_Xaxis__c": "65px",
+        "SCM_Customer_Adjusted_Yaxis__c": "42px",
+        "SCM_Customer__r": {
+            "Name": "Waitrose",
+            "Id": "brc7800000FtkO0Sj",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Strategic_Adjust__r": {
+            "Name": "Emerging Stars",
+            "Id": "nrc7800000FtZTKSj",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Contribution__r": {
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Adjusted_Priority__c": "emerging_stars"
+    },
+    {
         "Id": "NGef0000000e34KF12HTY",
         "SCM_Customer__c": "nrc7800000FtZTKSj",
         "SCM_Customer_Contribution__c": "a1cf00005005NKKBB2",
@@ -16,26 +36,26 @@
         "Unit_Country__c": "a1Tf00000005OGxEAM",
         "Unit_Segment__c": "a1Uf00000000cHFEAY",
         "CurrencyIsoCode": "USD",
-        "SCM_Customer_Adjusted_Xaxis__c": "100",
-        "SCM_Customer_Adjusted_Yaxis__c": "200",
-        "SCM_Customer_Adjusted_Priority__c": "niche_players",
+        "SCM_Customer_Adjusted_Xaxis__c": "11px",
+        "SCM_Customer_Adjusted_Yaxis__c": "10px",
         "SCM_Customer__r": {
-          "Name": "Aldi",
-          "Id": "nrf4500000FtZTAMj",
-          "CurrencyIsoCode": "USD"
+            "Name": "Aldi",
+            "Id": "nrf4500000FtZTAMj",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Strategic_Adjust__r": {
-          "Name": "Niche Players",
-          "Id": "nrc7800000FtZTKSj",
-          "CurrencyIsoCode": "USD"
+            "Name": "Emerging Stars",
+            "Id": "nrc7800000FtZTKSj",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Contribution__r": {
-          "Name": "NSV",
-          "Id": "a1cf00000005NVUAA2",
-          "CurrencyIsoCode": "USD"
-        }
-      },
-      {
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Adjusted_Priority__c": "scale"
+    },
+    {
         "Id": "B1ef0000000e76KFFHTY",
         "SCM_Customer__c": "nrf7800000FtXCAMj",
         "SCM_Customer_Contribution__c": "a1cf00005005NKKBB2",
@@ -44,26 +64,25 @@
         "Unit_Country__c": "a1Tf00000005OGxEAM",
         "Unit_Segment__c": "a1Uf00000000cHFEAY",
         "CurrencyIsoCode": "USD",
-        "SCM_Customer_Adjusted_Xaxis__c": "0",
-        "SCM_Customer_Adjusted_Yaxis__c": "0",
-        "SCM_Customer_Adjusted_Priority__c": "scale",
+        "SCM_Customer_Adjusted_Xaxis__c": "9999",
+        "SCM_Customer_Adjusted_Yaxis__c": "9999",
         "SCM_Customer__r": {
-          "Name": "Morrisons",
-          "Id": "nrf7800000FtXCAMj",
-          "CurrencyIsoCode": "USD"
+            "Name": "Morrisons",
+            "Id": "nrf7800000FtXCAMj",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Strategic_Adjust__r": {
-          "Name": "Partners",
-          "Id": "a1df0000000DWLzAAO",
-          "CurrencyIsoCode": "USD"
+            "Name": "Emerging Stars",
+            "Id": "a1df0000000DWLzAAO",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Contribution__r": {
-          "Name": "NSV",
-          "Id": "a1cf00000005NVUAA2",
-          "CurrencyIsoCode": "USD"
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
         }
-      },
-      {
+    },
+    {
         "Id": "b1eg0000000e5KXXHAI",
         "SCM_Customer__c": "n1bf4500000FtLQANj",
         "SCM_Customer_Contribution__c": "a1cf00005005NKKBB2",
@@ -72,25 +91,26 @@
         "Unit_Country__c": "a1Tf00000005OGxEAM",
         "Unit_Segment__c": "a1Uf00000000cHFEAY",
         "CurrencyIsoCode": "USD",
-        "SCM_Customer_Adjusted_Xaxis__c": "399",
-        "SCM_Customer_Adjusted_Yaxis__c": "4",
+        "SCM_Customer_Adjusted_Xaxis__c": "193px",
+        "SCM_Customer_Adjusted_Yaxis__c": "202px",
         "SCM_Customer__r": {
-          "Name": "Walmart",
-          "Id": "n1bf4500000FtLQANj",
-          "CurrencyIsoCode": "USD"
+            "Name": "Walmart",
+            "Id": "n1bf4500000FtLQANj",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Strategic_Adjust__r": {
-          "Name": "Emerging Stars",
-          "Id": "a1df0000000DWLzAAO",
-          "CurrencyIsoCode": "USD"
+            "Name": "Partners",
+            "Id": "a1df0000000DWLzAAO",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Contribution__r": {
-          "Name": "NSV",
-          "Id": "a1cf00000005NVUAA2",
-          "CurrencyIsoCode": "USD"
-        }
-      },
-      {
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Adjusted_Priority__c": "partners"
+    },
+    {
         "Id": "a1ef0000000e5KFFHAI",
         "SCM_Customer__c": "c1bf0000000FtLQAAj",
         "SCM_Customer_Contribution__c": "a1cf00000005NVUAA2",
@@ -99,26 +119,26 @@
         "Unit_Country__c": "a1Tf00000005OGxEAM",
         "Unit_Segment__c": "a1Uf00000000cHFEAY",
         "CurrencyIsoCode": "USD",
-        "SCM_Customer_Adjusted_Xaxis__c": "-98",
-        "SCM_Customer_Adjusted_Yaxis__c": "-30",
-        "SCM_Customer_Adjusted_Priority__c": "",
+        "SCM_Customer_Adjusted_Xaxis__c": "12px",
+        "SCM_Customer_Adjusted_Yaxis__c": "53px",
         "SCM_Customer__r": {
-          "Name": "Walmart",
-          "Id": "c1bf0000000FtLQAAj",
-          "CurrencyIsoCode": "USD"
+            "Name": "Lidl",
+            "Id": "c1bf0000000FtLQAAj",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Strategic_Adjust__r": {
-          "Name": "Scale",
-          "Id": "a1df0000000DWLzAAO",
-          "CurrencyIsoCode": "USD"
+            "Name": "Partners",
+            "Id": "a1df0000000DWLzAAO",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Contribution__r": {
-          "Name": "NSV",
-          "Id": "a1cf00000005NVUAA2",
-          "CurrencyIsoCode": "USD"
-        }
-      },
-      {
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Adjusted_Priority__c": "scale"
+    },
+    {
         "Id": "a1ef0000000e5JdAAI",
         "SCM_Customer__c": "a1bf0000000FtLtAAK",
         "SCM_Customer_Contribution__c": "a1cf00000005NVUAA2",
@@ -130,16 +150,36 @@
         "SCM_Customer__xAxis": "9999",
         "SCM_Customer__yAxis": "9999",
         "SCM_Customer__r": {
-          "Name": "Tesco",
-          "Id": "a1bf0000000FtLtAAK",
-          "CurrencyIsoCode": "USD"
+            "Name": "Tesco",
+            "Id": "a1bf0000000FtLtAAK",
+            "CurrencyIsoCode": "USD"
         },
         "SCM_Customer_Contribution__r": {
-          "Name": "NSV",
-          "Id": "a1cf00000005NVUAA2",
-          "CurrencyIsoCode": "USD"
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
         }
-      }
-    ]
-  }
+    },
+    {
+        "Id": "a1ef0000000e5JdBBI",
+        "SCM_Customer__c": "b1bf0000000FtLtAAK",
+        "SCM_Customer_Contribution__c": "a1cf00000005NVUAA2",
+        "Other_Customer__c": false,
+        "SCM_Customer_Strategic_Adjust__c": "a1df0000000DWLzAAO",
+        "Unit_Country__c": "a1Tf00000005OGxEAM",
+        "Unit_Segment__c": "a1Uf00000000cHFEAY",
+        "CurrencyIsoCode": "USD",
+        "SCM_Customer__xAxis": "9999",
+        "SCM_Customer__yAxis": "9999",
+        "SCM_Customer__r": {
+            "Name": "Wilkinsons",
+            "Id": "b1bf0000000FtLtAAK",
+            "CurrencyIsoCode": "USD"
+        },
+        "SCM_Customer_Contribution__r": {
+            "Name": "NSV",
+            "Id": "a1cf00000005NVUAA2",
+            "CurrencyIsoCode": "USD"
+        }
+    }
 ]

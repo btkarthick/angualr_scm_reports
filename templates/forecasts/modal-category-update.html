@@ -5,9 +5,9 @@
 <div class="modal-header">
 
     <h3 class="modal-title">
-         <span  data-ng-bind="editcat.modalData.channelName | capitalizeIt"></span>
+         <span  data-ng-bind="editcat.modalData.channelName"></span>
          <span data-ng-if="editcat.modalData.hasFormat">
-             - {{editcat.modalData.formatName | capitalizeIt }}
+             - {{editcat.modalData.formatName }}
          </span>
     </h3>
 </div>
@@ -18,7 +18,7 @@
             <div class="form-group col-xs-4">
 
                 <h5 class="text-center">Overall Category Sales by Channel (RSV)</h5>
-                <label for="">2015A ($M)</label>
+                <label for="">2015A ($m)</label>
                 <input type="text" class="form-control" name="SalesActuals" data-ng-model="editcat.format.Category_Total_Sales_Actuals__c"
                 data-ng-change="editcat.validate(editcat.format.Category_Total_Sales_Actuals__c,'SalesActuals')"
                 data-ng-required="true" data-ng-blur="editcat.calOverAllCAGR1520();">
@@ -31,7 +31,7 @@
                     <div ng-message="SalesActuals">Please enter a valid number</div>
                 </div>
 
-                <label for="">2020F ($M)</label>
+                <label for="">2020F ($m)</label>
                 <input type="text" class="form-control" name="SalesForecast" data-ng-model="editcat.format.Category_Total_Sales_Forecast__c"
                 data-ng-change="editcat.validate(editcat.format.Category_Total_Sales_Forecast__c,'SalesForecast')"
                 data-ng-required="true" 
@@ -81,7 +81,7 @@
             <div class="form-group col-xs-4">
                 <h5 class="text-center">Mars Category Sales by Channel (RSV)</h5>
 
-                <label for="">2015A ($M)</label>
+                <label for="">2015A ($m)</label>
                 <input type="text" class="form-control" name="CategoryActual" id="" data-ng-model="editcat.format.Mars_Category_Total_Sales_Actuals__c"
                 data-ng-change="editcat.validate(editcat.format.Mars_Category_Total_Sales_Actuals__c,'CategoryActual')"
                 data-ng-required="true" data-ng-blur="editcat.calMarsCAGR1520();">
@@ -94,7 +94,7 @@
                     <div ng-message="CategoryActual">Please enter a valid number</div>
                 </div>
 
-                <label for="">2020F ($M)</label>
+                <label for="">2020F ($m)</label>
                 <input type="text" class="form-control" name="CategoryForecast" id="" data-ng-model="editcat.format.Mars_Category_Total_Sales_Forecast__c"
                 data-ng-change="editcat.validate(editcat.format.Mars_Category_Total_Sales_Forecast__c,'CategoryForecast')"
                 data-ng-required="true" 

@@ -63,9 +63,9 @@
 
         vm.custEntities = angular.copy(customerEntities);
 
-        vm.custEntities.Unit_Country_Txt__c = rawCustomerDetails.currentUserSegment.Country__c;
+        vm.custEntities.Unit_Country_Txt__c = rawCustomerDetails.selectedCountryToInsert;
 
-        vm.custEntities.Unit_Segment_TXT__c = rawCustomerDetails.currentUserSegment.Segment__c;
+        vm.custEntities.Unit_Segment_TXT__c = rawCustomerDetails.selectedSegmentToInsert;
 
         vm.customerName = '0';
 

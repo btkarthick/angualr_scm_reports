@@ -1,54 +1,46 @@
 <div class="cpr-wrapper">
 
     <h4> Adjust customer prioritisation based on strategic alignment </h4>
-
-    <div class="cpr-graph">
-
-        <!--Top graph goes here-->
-
-    </div>
-
-
-<!--Start of Adjusted Graph-->
-
-    <div class="cpr-content">
-        
-        <div class="cpr-dd-left"></div>
-        
-        <div class="cpr-dd-middle">
-            
-            <div class="cpr-dd-inner">
-                
-                <section>This is checking</section>
-                
-                <section>This is checking</section>
-                
-            </div>
-            
-            <div class="cpr-dd-inner no-top-border">
-                
-                <section>This is checking</section>
-                
-                <section>This is checking</section>
-                
-            </div>
-            
-        </div>
-        
-        <div class="cpr-dd-right">
-            
-            <!--Right side referance starts-->
-            
-                <table class="table table-bordered text-center scm-table">
-                    
-                </table>    
-            
-            <!--End of right side referance-->
-            
-        </div>
-            
-    </div>
     
-   <!--End of Adjusted Graph -->
+    <!--Start of Adjusted Graph-->
+    
+    <div class="cpr-save">
+        <div class="cpr-alert clearfix">
+        
+        <div class="alert alert-success" role="alert" 
+               data-ng-if="cpr.showSuccess">
+               Data saved successfully.
+        </div>
+        
+            
+        <div class="alert alert-danger" role="alert" 
+               data-ng-if="cpr.showFailure">
+              No customer data found.
+        </div>
+        
+        </div>
+        
+        
+        
+        <button class="scmBtn btn-primary" 
+                data-ng-if="!cpr.showFailure"
+                data-ng-click="cpr.saveGraphChanges();"> Save </button>
+                
+         <!--<button class="scmBtn btn-warning" 
+                data-ng-if="!cpr.showFailure" 
+                data-ng-click="cpr.setResetGraph();">Reset</button>       -->
+    </div>
+
+
+    <data-adjust-priority 
+        customer-data="cpr.priorityData" 
+        failure-flag= "cpr.showFailure" 
+        reset-flag="cpr.resetFlag"
+        data-ng-cloak=""></data-adjust-priority>    
+
+    <!--<textarea name="" id="" cols="70" rows="4">
+        {{ cpr.priorityData | json }}
+    </textarea>-->
+    <!--End of Adjusted Graph -->
 
 </div>

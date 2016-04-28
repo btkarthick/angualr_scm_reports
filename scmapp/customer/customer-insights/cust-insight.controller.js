@@ -26,6 +26,8 @@
         vm.updateChartAxis = function (chartAxis) {
 
             vm.chartAxisData.Customer_Insight_Axis_Position__c = chartAxis;
+            
+            console.log(vm.chartAxisData);
 
             CustProfitChartService.updateChartAxis(vm.chartAxisData).then(function (chartAxisData) {
                 vm.baseLineH = chartAxisData.Customer_Insight_Axis_Position__c;

@@ -17,14 +17,14 @@
     'use strict';
 
 
-    var setEditCategoryController = function($scope, catserv, $uibModalInstance, format) {
+    var setEditCategoryController = function($scope, catserv, $uibModalInstance, format, HelperService) {
 
         var vm = this;
 
         vm.format = angular.copy(format);
 
         vm.modalData = catserv.modalvalues;
-
+        
         
         //vm.format.Category_Update_Remark = "";
 
@@ -39,10 +39,10 @@
 
             var totalSales = (Math.pow((forecast / actuals), 1 / 5)) - 1;
 
-            totalSales = round(totalSales * 100, 1);
+            totalSales = HelperService.decimalRoundTo((totalSales * 100), 2);
 
             vm.format.Category_Total_Sales_CAGR_5Y__c = totalSales;
-
+            
             // Calculate Mars share Actuals
             vm.calMarsShareActuals();
 
@@ -54,11 +54,11 @@
 
             var forecast = parseFloat(vm.format.Category_Total_Sales_Forecast__c);
 
-            var forecastTotal = vm.modalData.total.overall[1];
+            var forecastTotal = parseFloat(vm.modalData.total.overall[1]);
 
             /** Formula --> forecast / forecastTotal  */
 
-            var overAllTotal = round(((forecast / forecastTotal) * 100), 1);
+            var overAllTotal = HelperService.decimalRoundTo(((forecast / forecastTotal) * 100), 2);
 
             vm.format.Category_Total_Sales_Total__c = overAllTotal;
 
@@ -83,7 +83,7 @@
 
             var totalSales = (Math.pow((forecast / actuals), 1 / 5)) - 1;
 
-            totalSales = round(totalSales * 100, 1);
+            totalSales = HelperService.decimalRoundTo((totalSales * 100), 2);
 
             vm.format.Mars_Category_Total_Sales_CAGR_5Y__c = totalSales;
 
@@ -98,11 +98,11 @@
 
             var forecast = parseFloat(vm.format.Mars_Category_Total_Sales_Forecast__c);
 
-            var forecastTotal = vm.modalData.total.mars[1];
+            var forecastTotal = parseFloat(vm.modalData.total.mars[1]);
 
             /** Formula --> forecast / forecastTotal  */
 
-            var overAllTotal = round(((forecast / forecastTotal) * 100), 1);
+            var overAllTotal = HelperService.decimalRoundTo(((forecast / forecastTotal) * 100), 2);
 
             vm.format.Mars_Category_Total_Sales_Total__c = overAllTotal;
 
@@ -123,8 +123,9 @@
 
             var marsActuals = parseFloat(vm.format.Mars_Category_Total_Sales_Actuals__c);
 
-            var total = round((marsActuals / overallActuals), 1);
+            var total = (marsActuals / overallActuals) * 100;
 
+            total = HelperService.decimalRoundTo(total, 2);
             // Mars share actuals
             vm.format.Mars_Category_Share_Actuals__c = total;
             
@@ -143,7 +144,9 @@
 
             var marsForecast = parseFloat(vm.format.Mars_Category_Total_Sales_Forecast__c);
 
-            var total = round((marsForecast / overallForecast), 1);
+            var total = (marsForecast / overallForecast) * 100;
+            
+            total = HelperService.decimalRoundTo(total, 2);
 
             // Mars share actuals
             vm.format.Mars_Category_Share_Forecast__c = total;
@@ -162,10 +165,10 @@
             
             var marsShareForecast = parseFloat(vm.format.Mars_Category_Share_Forecast__c);
             
-            var ppchange = round((marsShareActuals -  marsShareForecast), 1);
+            var ppchange = HelperService.decimalRoundTo((marsShareActuals -  marsShareForecast), 2);
             
             vm.format.Mars_Category_Share_PP_Change__c = ppchange;
-            
+        
         };
         
         /** End of Mars share PP change ***/
@@ -219,12 +222,6 @@
             $scope.editCategoryForm.$error = {};
         };
 
-
-        var round = function(value, decimals) {
-
-            return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
-        }
-
         // End of private related functions //
 
     };
@@ -233,6 +230,6 @@
         .module('scm.forecasts')
         .controller('EditCatCtrl', setEditCategoryController);
 
-    setEditCategoryController.$inject = ['$scope', 'catserv', '$uibModalInstance', 'format'];
+    setEditCategoryController.$inject = ['$scope', 'catserv', '$uibModalInstance', 'format', 'HelperService'];
 
 })();

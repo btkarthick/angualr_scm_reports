@@ -11,35 +11,32 @@
  * Wrap everything in an IFFE
  * 
  */
-(function() {
+(function () {
 
     'use strict';
 
-    var setResourceSpendService = function() {
+    var setResourceSpendService = function () {
 
         var resTable = new Array();
         var domain = new Array();
         var resBgColor = new Array();
         var formats = new Array();
 
-        var setDomainData = function(rawResData) {
+        var setDomainData = function (rawResData) {
 
             domain = ['Resources Spend'];
-            _.forEach(rawResData, function(resource) {
+            _.forEach(rawResData, function (resource) {
                 if (resource.categoryToday > 0 || resource.futureCategory > 0 || resource.marsSpend > 0) {
                     domain.push(resource.format, { role: 'style' });
                 }
             });
             resTable.push(domain);
 
-            console.log(rawResData);
-
         };
 
-        var checkDomain = function(format) {
+        var checkDomain = function (format) {
             var hasDomain = false;
-            
-            _.forEach(domain, function(value) {
+            _.forEach(domain, function (value) {
                 if (value == format)
                     hasDomain = true;
             });
@@ -47,7 +44,7 @@
             return hasDomain;
         };
 
-        var setConstantData = function(rawResData) {
+        var setConstantData = function (rawResData) {
 
             var i, chartSpacing = 4;
 
@@ -74,7 +71,7 @@
 
                 resConstRow.push(chartSpacing);
 
-                _.forEach(rawResData, function(value, j) {
+                _.forEach(rawResData, function (value, j) {
                     var hasDomain = checkDomain(value.format);
 
                     if (value[currentMap] > 0) {
@@ -92,28 +89,28 @@
                 });
                 resTable.push(resConstRow);
             }
-            
-             _.forEach(resTable, function(row, i) {
-                    
+
+            _.forEach(resTable, function (row, i) {
+
                 if (i === 0) {
-                    
-                    _.forEach(row, function(value, j) {
-                        
-                        if(j > 0){
-                            
-                            if(angular.isString(value)){
-                               var resource = _.find(rawResData,function(r) { return r.format === value });
-                               resBgColor.push(resource.bgColor);
+
+                    _.forEach(row, function (value, j) {
+
+                        if (j > 0) {
+
+                            if (angular.isString(value)) {
+                                var resource = _.find(rawResData, function (r) { return r.format === value });
+                                resBgColor.push(resource.bgColor);
                             }
                         }
-                            
+
                     });
                 }
             });
-            
+
         };
 
-        var getResData = function(rawResData) {
+        var getResData = function (rawResData) {
             resTable = [];
             var rawResData = rawResData;
             setDomainData(rawResData);
@@ -127,7 +124,7 @@
 
 
         var resourcesSpendoptions = {
-            width: 870,
+            width: 900,
             height: 500,
             tooltip: {
                 trigger: 'none'
@@ -135,7 +132,7 @@
             legend: {
                 textStyle: {
                     fontSize: 12
-                }
+                },
             },
             isStacked: 'percent',
             bar: {
@@ -143,8 +140,8 @@
             },
             chartArea: {
                 top: '15%',
-                left: '10%',
-                width: '70%',
+                left: '7%',
+                width: '63%',
                 height: '80%'
             },
             vAxis: {

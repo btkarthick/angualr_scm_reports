@@ -97,7 +97,7 @@
                     
                     $ctrl.helperService.chartSvgToCanvas(elementsForSave.chartContainer, elementsForSave.canvasContainer);
                     
-                    $ctrl.helperService.saveChartAsImage(elementsForSave.chartContainer, elementsForSave.canvasContainer, elementsForSave.wrapperToCap, elementsForSave.imageName, elementsForSave.downloadEl);
+                    $ctrl.helperService.saveChartAsImage(elementsForSave.chartContainer, elementsForSave.canvasContainer, elementsForSave.wrapperToCap, elementsForSave.imageName);
                     
 
                 });
@@ -109,8 +109,8 @@
                     chartContainer : $ctrl.chartContainer,
                     canvasContainer : document.getElementById("chart_canvas"),
                     wrapperToCap : document.getElementById("capture_wrapper"),
-                    imageName: 'growth-chart',
-                    downloadEl: document.getElementById("download_anchor"),
+                    imageName: 'Customer Insights'
+                    
                 };
             };
 

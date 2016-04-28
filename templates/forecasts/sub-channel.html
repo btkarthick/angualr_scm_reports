@@ -10,22 +10,24 @@
                 <tr class="heading-row">
                     <td rowspan="2" class="heading">Channel</td>
                     <td rowspan="2" class="heading">Format</td>
-                    <td class="heading"> Mars Resources
-                        <br>by Channel: Total spend </td>
-                    <td class="heading"> Trade spend </td>
+                    <td class="heading"> Total Expenditure </td>
+                    <td class="heading" data-tooltip-append-to-body="true" 
+                                        data-uib-tooltip="Enter Total Trade Expenditure. Difference between NSV & GSV ">
+                    Trade Expenditure </td>
                     <td class="heading"> Consumer
                         <br>Promotion Spend </td>
-                    <td class="heading">D&E</td>
-                    <td class="heading"> Overhead</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Display & Equipment">D&E</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Any Channel Dedicated Resources - EG Category, Customer Marketing, Supply Chain ">
+                    Overhead</td>
                     <td rowspan="2" class="heading">Edit</td>
                 </tr>
 
                 <tr>
-                    <td class="heading">2015A<br/>($M)</td>
-                    <td class="heading">2015A<br/>($M)</td>
-                    <td class="heading">2015A<br/>($M)</td>
-                    <td class="heading">2015A<br/>($M)</td>
-                    <td class="heading">2015A<br/>($M)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
+                    <td class="heading" data-tooltip-append-to-body="true" data-uib-tooltip="Actual Sales">2015A<br/>($m)</td>
 
                 </tr>
 
@@ -36,9 +38,7 @@
 
                 </tr>
 
-                <tr data-ng-repeat-end 
-                     data-ng-repeat-start="format in channel.format track by $index" 
-                     data-ng-init="offset = $index">
+                <tr data-ng-repeat-end data-ng-repeat-start="format in channel.format track by $index" data-ng-init="offset = $index">
 
                     <td data-ng-if="channel.hasFormat" class="{{ format.className }}" data-ng-bind="format.formatName">
                     </td>
@@ -46,17 +46,11 @@
                     <td data-ng-if="!channel.hasFormat" colspan="2" class="{{ channel.className }}" data-ng-bind="channel.channelName">
                     </td>
 
-                    <td data-ng-repeat-end 
-                        class="channel__cells" 
-                        data-ng-if="format.sales.length > 0" 
-                        data-ng-repeat="sval in format.sales track by $index"
-                        data-ng-init="index=$index" 
-                        data-ng-bind="sval | formatNumber | replaceZero">
+                    <td data-ng-repeat-end class="channel__cells" data-ng-if="format.sales.length > 0" data-ng-repeat="sval in format.sales track by $index"
+                        data-ng-init="index=$index" data-ng-bind="sval | formatNumber | replaceZero">
                     </td>
 
-                    <td data-ng-repeat-end 
-                        data-ng-if="format.sales.length === 0" 
-                        data-ng-repeat="n in chsub.generateArray() track by $index"
+                    <td data-ng-repeat-end data-ng-if="format.sales.length === 0" data-ng-repeat="n in chsub.generateArray() track by $index"
                         data-ng-bind="''"></td>
 
                     <td class="channel-edit">
@@ -69,8 +63,7 @@
 
                 <tr class="channel__total">
                     <td colspan="2">Total</td>
-                    <td data-ng-if="chsub.formatForecastList.totalsales.salesBreakDownCount.length > 0" 
-                        data-ng-repeat="total in chsub.formatForecastList.totalsales.salesBreakDownCount track by $index"
+                    <td data-ng-if="chsub.formatForecastList.totalsales.salesBreakDownCount.length > 0" data-ng-repeat="total in chsub.formatForecastList.totalsales.salesBreakDownCount track by $index"
                         data-ng-bind="total | replaceZero | formatNumber">
                     </td>
                     <td colspan="5"></td>

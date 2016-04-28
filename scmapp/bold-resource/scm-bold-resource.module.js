@@ -40,6 +40,7 @@
         'ngAnimate',
         'ngSanitize',
         'ngMessages',
+        'ui.bootstrap',
         'bold-resource.templates',
         'scm.filters',
         'scm.services'

@@ -42,7 +42,7 @@
                         
                         HelperService.chartSvgToCanvas(elementsForSave.chartContainer, elementsForSave.canvasContainer);
 
-                        HelperService.saveChartAsImage(elementsForSave.chartContainer, elementsForSave.canvasContainer, elementsForSave.wrapperToCap, elementsForSave.imageName, elementsForSave.downloadEl);
+                        HelperService.saveChartAsImage(elementsForSave.chartContainer, elementsForSave.canvasContainer, elementsForSave.wrapperToCap, elementsForSave.imageName);
 
 
                     });
@@ -54,8 +54,7 @@
                         chartContainer: document.getElementById('resource_spend'),
                         canvasContainer: document.getElementById("chart_canvas"),
                         wrapperToCap: document.getElementById("capture_wrapper"),
-                        imageName: 'resource-chart',
-                        downloadEl: document.getElementById("download_anchor"),
+                        imageName: 'Resources Spend'
                     };
                 };
 

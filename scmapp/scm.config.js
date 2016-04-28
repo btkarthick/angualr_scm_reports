@@ -63,6 +63,7 @@ var STATECONFIG = {
     adjust_customer: {
 
         url: "/adjust_customer",
+        //templateUrl: "./templates/customer/adjust-customer-prioritisation.html",
         templateUrl: "adjust-customer-prioritisation.html",
         controller: "CustPriorCtrl",
         controllerAs: "cpr"

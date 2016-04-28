@@ -40,12 +40,19 @@
         
     }
     
+    &-table-header{
+        text-align: center;
+        color: #333333;
+        font-size: 18px;
+        padding: 10px;
+    }
+    
     &-total{
             
             background-color: #D6D6D6;
             td{
-                font-weight: bold;
-            color: #101010 !important;
+               font-weight: bold;
+                color: #101010 !important;
             }
             
           }
