@@ -195,18 +195,52 @@
             
         }   
         &-legends{
-            margin-left: 81px;
-            li{
-                width: 153px;
-                margin-right: 32px;
-                text-align: center;
-                margin-bottom: 30px;
-                color: #003974;
-                font-weight: bold;            
-                margin-left: 0 !important;
-            }
+          
+                margin: 0;
+                padding: 0 !important; 
+                width: 670px;
+               // border: 1px solid crimson;
+                 margin-left: 60px;
+                 margin-bottom: 20px;
+                 margin-top: -4px;
                 
-        }
+                li{
+                    list-style-type: none;
+                    float: left;
+                    text-align: center;
+                    
+                    section{ 
+                    
+                        color: #003974;
+                        font-weight: bold;
+                         margin-top: 5px;     
+                        
+                    }
+                    
+                    span{
+                        
+                        color: #333333;
+                        font-size: 12px;
+                    }
+                    
+                    &:first-child{
+                        
+                       // border: 1px solid greenyellow;
+                        width: 150px;
+                        
+                    }
+                    
+                    &:last-child{
+                        
+                       // border: 1px solid aqua;
+                         width: 160px;
+                    }
+                    
+                    &.middle{
+                       width: 195px;
+                    }
+                }
+         }
     } 
     &-print-btn{
         position: absolute;

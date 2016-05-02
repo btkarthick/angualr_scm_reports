@@ -125,7 +125,7 @@
 
         var resourcesSpendoptions = {
             width: 900,
-            height: 500,
+            height: 470,
             tooltip: {
                 trigger: 'none'
             },

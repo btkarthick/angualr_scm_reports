@@ -182,7 +182,7 @@
             hAxis: {
                 gridlines: { count: 3, color: '#fff' },
                 ticks: [0, 30],
-                title: 'Channel growth (%)',
+                title: 'Channel growth 2015 - 2020 (%)',
                 titleTextStyle: {
                     bold: true,
                     italic: false,
