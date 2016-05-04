@@ -18,6 +18,7 @@ var gulp = require('gulp'),
     header = require('gulp-header'),
     fs = require('fs'),
     _ = require('lodash'),
+    stripDebug = require('gulp-strip-debug'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload;
@@ -272,6 +273,8 @@ var setCombineJs = function (module) {
     return gulp.src(allJs)
 
         .pipe(concat('scmapp-' + module + '.bundle.js', { newLine: '\n;' }))
+        
+        .pipe(stripDebug())
 
         .pipe(uglify({
 

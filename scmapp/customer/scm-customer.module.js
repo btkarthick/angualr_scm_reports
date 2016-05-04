@@ -38,7 +38,6 @@
         'ngForce',
         'ngAnimate',
         'ngSanitize',
-        'ngDragDrop',
         'ui.bootstrap',
         'ngMessages',
         'customer.templates',
