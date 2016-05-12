@@ -17,29 +17,44 @@
     'use strict';
 
 
-    var setAddCustomerController = function ($scope, custLevelServ, $uibModalInstance, rawCustomerDetails, customerEntities, custTransTotal, customerDetails) {
+    var setAddCustomerController = function (   $scope, 
+                                                custLevelServ, 
+                                                $uibModalInstance, 
+                                                rawCustomerDetails, 
+                                                customerEntities, 
+                                                custTransTotal, 
+                                                customerDetails, 
+                                                HelperService) {
 
         var vm = this;
 
         var customerList = [];
 
-        var rawCustomerList = rawCustomerDetails.customerData;
+        //var rawCustomerList = rawCustomerDetails.customerData;
+
+        var rawCustomerList = HelperService.getMergeGlobalUnitCustomers(  rawCustomerDetails.customerData, 
+                                                    rawCustomerDetails.globalCustomerData ); 
+       
 
         var filterAddedCustomers = function () {
 
-            _.forEach(rawCustomerList, function (customer) {
+            _.forEach(rawCustomerList, function (allCustomers) {
 
-                var res = customer.SCM_Customer__r;
                 var isPresent = false;
 
                 _.forEach(customerDetails.custTransactions, function (customer, i) {
-                    if (customer.SCM_Customer__r.Id === res.Id)
+                    
+                    if (_.isEqual(customer.SCM_Customer__r.Id,allCustomers.Id)){
+                        
                         isPresent = true;
-
+                    }
+             
                 });
 
-                if (!isPresent)
-                    customerList.push({ "Id": res.Id, "customer": res.Name });
+                if (!isPresent){
+                    customerList.push({ "Id": allCustomers.Id, "customer": allCustomers.Name });
+                }
+                    
             });
 
         };
@@ -138,6 +153,14 @@
         .module('scm.customer')
         .controller('addCustCtrl', setAddCustomerController);
 
-    setAddCustomerController.$inject = ['$scope', 'custLevelServ', '$uibModalInstance', 'customerList', 'customerEntities', 'custTransTotal', 'customerDetails'];
+    setAddCustomerController.$inject = [    '$scope', 
+                                            'custLevelServ', 
+                                            '$uibModalInstance', 
+                                            'customerList', 
+                                            'customerEntities', 
+                                            'custTransTotal', 
+                                            'customerDetails',
+                                            'HelperService'
+                                       ];
 
 })();

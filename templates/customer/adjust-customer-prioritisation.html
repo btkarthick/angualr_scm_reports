@@ -1,42 +1,34 @@
 <div class="cpr-wrapper">
 
     <h4> Adjust customer prioritisation based on strategic alignment </h4>
-    
+
     <!--Start of Adjusted Graph-->
-    
-    <div class="cpr-save">
+
+    <div class="cpr-save clearfix">
         <div class="cpr-alert clearfix">
-        
-        <div class="alert alert-success" role="alert" 
-               data-ng-if="cpr.showSuccess">
-               Data saved successfully.
+
+            <div class="alert alert-success" role="alert" data-ng-if="cpr.showSuccess">
+                Data saved successfully.
+            </div>
+
+
+            <div class="alert alert-danger" role="alert" data-ng-if="cpr.showFailure">
+	                No customer data found.
+            </div>
+
         </div>
-        
-            
-        <div class="alert alert-danger" role="alert" 
-               data-ng-if="cpr.showFailure">
-              No customer data found.
-        </div>
-        
-        </div>
-        
-        
-        
-        <button class="scmBtn btn-primary" 
-                data-ng-if="!cpr.showFailure"
-                data-ng-click="cpr.saveGraphChanges();"> Save </button>
-                
-         <!--<button class="scmBtn btn-warning" 
+
+
+
+        <button class="scmBtn btn-primary" data-ng-if="!cpr.showFailure" data-ng-click="cpr.saveGraphChanges();"> Save </button>
+
+        <!--<button class="scmBtn btn-warning" 
                 data-ng-if="!cpr.showFailure" 
                 data-ng-click="cpr.setResetGraph();">Reset</button>       -->
     </div>
 
 
-    <data-adjust-priority 
-        customer-data="cpr.priorityData" 
-        failure-flag= "cpr.showFailure" 
-        reset-flag="cpr.resetFlag"
-        data-ng-cloak=""></data-adjust-priority>    
+    <data-adjust-priority customer-data="cpr.priorityData" failure-flag="cpr.showFailure" reset-flag="cpr.resetFlag" data-ng-cloak=""></data-adjust-priority>
 
     <!--<textarea name="" id="" cols="70" rows="4">
         {{ cpr.priorityData | json }}

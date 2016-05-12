@@ -140,6 +140,15 @@
         };
         
         
+        var setMergeGlobalUnitCustomers = function(objUnitCustomers, objGlobalCustomers){
+            
+              var unitCustomers = [], mergedCustomers = [];
+              unitCustomers =  _.map( objUnitCustomers, 'SCM_Customer__r' );
+              mergedCustomers = _.uniqBy( _.flatten([unitCustomers, objGlobalCustomers]), 'Id');
+              return mergedCustomers;
+        };
+        
+        
         // Primitive
         this.getCustomerEntities = setCustomerEntities;
         this.getDefaultStrategy = setDefaultStrategy;
@@ -150,6 +159,8 @@
         this.chartSvgToCanvas = chartSvgToCanvas;
         this.saveHtmlAsImage = setSaveHtmlAsImage;
         this.decimalRoundTo = setDecimalRounding;
+        
+        this.getMergeGlobalUnitCustomers = setMergeGlobalUnitCustomers; 
 
 
     }
